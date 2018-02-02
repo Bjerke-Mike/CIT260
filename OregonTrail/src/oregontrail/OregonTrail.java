@@ -5,9 +5,12 @@
  */
 package oregontrail;
 
+import oregontrail.model.Actor;
+import oregontrail.model.Player;
+
 /**
  *
- * @author Mike
+ * @author Mike Bjerke & Melissa Holland
  */
 public class OregonTrail {
 
@@ -15,7 +18,12 @@ public class OregonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player playerOne = new Player();
+        playerOne.setName("Missy");
+        
+        System.out.println(playerOne.toString());
+        System.out.println(Actor.CoyoteAttack.getName());
+        System.out.println(Actor.CoyoteAttack.getDescription());
     }
     
 }
