@@ -16,12 +16,16 @@ public class Game implements Serializable {
     // class variables
     private int gameDate;
     private int mileage;
-    private Player player;
-    private final Map map = new Map();
-    private final PlayerData playerData = new PlayerData();
+    private Map map = new Map();
+    private PlayerData playerData = new PlayerData();
 
     public int getGameDate() {
         return gameDate;
+    }
+
+    public Game() {
+        gameDate = 0;
+        mileage = 0;
     }
 
     public void setGameDate(int gameDate) {
@@ -36,12 +40,9 @@ public class Game implements Serializable {
         this.mileage = mileage;
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
+    @Override
+    public String toString() {
+        return "Game{" + "gameDate=" + gameDate + ", mileage=" + mileage + '}';
     }
     
     
