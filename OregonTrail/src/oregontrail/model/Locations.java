@@ -5,6 +5,8 @@
  */
 package oregontrail.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author mellissah.
@@ -57,6 +59,5 @@ public enum Locations implements Serializable {
     public String toString() {
         return "Locations{" + "description=" + description + ", directions=" + directions + '}';
     }
-    
     
 }
