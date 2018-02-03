@@ -9,6 +9,6 @@ package oregontrail.model;
  *
  * @author mellissah.
  */
-public enum ResourceScene implements Serializable {
+public enum ResourceScene {
     
 }
