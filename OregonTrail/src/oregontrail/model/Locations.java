@@ -4,14 +4,11 @@
  * and open the template in the editor.
  */
 package oregontrail.model;
-
-import java.io.Serializable;
-
 /**
  *
  * @author mellissah.
  */
-public enum Locations implements Serializable {
+public enum Locations {
    
     Independence("This is the starting point.", "You are given supplies, oxen, ammo, and food to start your journey. Use these wisely"),
     FortOne("This is a supply fort in the dessert.", "Trade or buy needed supplies here."),
