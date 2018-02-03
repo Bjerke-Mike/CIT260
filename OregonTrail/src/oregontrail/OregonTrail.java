@@ -32,6 +32,7 @@ public class OregonTrail {
         System.out.println(playerOne.games.playerData.toString());
         System.out.println(RegularScene.desert.getName() + " " + RegularScene.desert.getDescription());
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
+        System.out.println(playerOne.supplies.toString());
         
     }
     
