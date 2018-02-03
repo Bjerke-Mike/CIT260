@@ -13,7 +13,7 @@ public enum ResourceScene {
     
     trade("Here you have the option to trade.", "Please select items to trade and negotiate with the trader."),
     fort("Fort", "You have found a fort to take shelter in for the night."),
-    dessert("Desert", "You are in the desert. Food is scarce"),
+    desert("Desert", "You are in the desert. Food is scarce"),
     mountian("Mountians", "You are in the mountians. Travel is slow."),
     river("You are at a river.", "Crossing can be dangerous."),
     valley("Valley", "You are in a valley. Food and grass are plentiful.");
@@ -35,7 +35,7 @@ public enum ResourceScene {
     }
 
     public static ResourceScene getDessert() {
-        return dessert;
+        return desert;
     }
 
     public static ResourceScene getMountian() {
