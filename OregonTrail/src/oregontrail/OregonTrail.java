@@ -6,6 +6,7 @@
 package oregontrail;
 
 import oregontrail.model.Actor;
+import oregontrail.model.Game;
 import oregontrail.model.Player;
 import oregontrail.model.ResourceScene;
 import oregontrail.model.RegularScene;
@@ -26,6 +27,8 @@ public class OregonTrail {
         System.out.println(playerOne.toString());
         System.out.println(Actor.CoyoteAttack.getName());
         System.out.println(Actor.CoyoteAttack.getDescription());
+        System.out.println(playerOne.games.toString());
+        
     }
     
 }
