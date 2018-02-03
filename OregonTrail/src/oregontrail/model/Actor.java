@@ -14,11 +14,11 @@ public enum Actor {
     CoyoteAttack("Coyotes attacks your wagon.", "They get away with some of your food.", "Food", -5, -25),
     FindExtraFood("You find an abandoned wagon.", "It contains some extra food.", "Food", 5, 25);
     
-    private String name;
-    private String description;
-    private String itemAffected;
-    private int minimum;
-    private int maximum;
+    private final String name;
+    private final String description;
+    private final String itemAffected;
+    private final int minimum;
+    private final int maximum;
 
     Actor(String name, String description, String itemAffected, int minimum, int maximum) {
         this.name = name;

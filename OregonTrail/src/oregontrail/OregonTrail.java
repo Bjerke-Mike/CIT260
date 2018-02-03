@@ -7,6 +7,8 @@ package oregontrail;
 
 import oregontrail.model.Actor;
 import oregontrail.model.Player;
+import oregontrail.model.RegularScene;
+import oregontrail.model.ResourceScene;
 
 /**
  *
