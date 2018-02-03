@@ -24,18 +24,15 @@ public class OregonTrail {
         Player playerOne = new Player();
         playerOne.setName("Missy");
         
-        System.out.println(playerOne.toString());
-        System.out.println(Actor.CoyoteAttack.getName());
-        System.out.println(Actor.CoyoteAttack.getDescription());
+        System.out.println(Actor.CoyoteAttack.getName() + " " + Actor.CoyoteAttack.getDescription());
         System.out.println(playerOne.games.toString());
-        System.out.println(RegularScene.desert.getName());
-        System.out.println(RegularScene.desert.getDescription());
-        System.out.println(ResourceScene.fort.getName());
-        System.out.println(ResourceScene.fort.getDescription());
-        System.out.println(Locations.Independence.getDescription());
-        System.out.println(Locations.Independence.getDirections());
+        System.out.println(Locations.Independence.getDescription() + " " + Locations.Independence.getDirections());
         System.out.println(playerOne.games.map.toString());
+        System.out.println(playerOne.toString());
         System.out.println(playerOne.games.playerData.toString());
+        System.out.println(RegularScene.desert.getName() + " " + RegularScene.desert.getDescription());
+        System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
+        
     }
     
 }
