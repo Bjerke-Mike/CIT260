@@ -18,7 +18,7 @@ public class Player implements Serializable {
     // class variables
     private String name;
     public Game games = new Game();
-    private Supplies supplies = new Supplies();
+    public Supplies supplies = new Supplies();
 
     public Player() {
     }
