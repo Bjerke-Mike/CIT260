@@ -95,5 +95,52 @@ public class Supplies implements Serializable {
         if (this.miscSupplies < 0)
             this.miscSupplies = 0;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + this.money;
+        hash = 97 * hash + this.food;
+        hash = 97 * hash + this.ammo;
+        hash = 97 * hash + this.clothing;
+        hash = 97 * hash + this.miscSupplies;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Supplies other = (Supplies) obj;
+        if (this.money != other.money) {
+            return false;
+        }
+        if (this.food != other.food) {
+            return false;
+        }
+        if (this.ammo != other.ammo) {
+            return false;
+        }
+        if (this.clothing != other.clothing) {
+            return false;
+        }
+        if (this.miscSupplies != other.miscSupplies) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Supplies{" + "money=$" + money + ", food=" + food + ", ammo=" + ammo + ", clothing=" + clothing + ", miscSupplies=" + miscSupplies + '}';
+    }
+    
     
 }
