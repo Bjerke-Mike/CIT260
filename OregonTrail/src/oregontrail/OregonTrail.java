@@ -35,7 +35,7 @@ public class OregonTrail {
         System.out.println(Locations.Independence.getDescription());
         System.out.println(Locations.Independence.getDirections());
         System.out.println(playerOne.games.map.toString());
-        
+        System.out.println(playerOne.games.playerData.toString());
     }
     
 }
