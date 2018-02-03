@@ -34,6 +34,7 @@ public class OregonTrail {
         System.out.println(ResourceScene.fort.getDescription());
         System.out.println(Locations.Independence.getDescription());
         System.out.println(Locations.Independence.getDirections());
+        System.out.println(playerOne.games.map.toString());
         
     }
     
