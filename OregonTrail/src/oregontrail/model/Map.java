@@ -5,6 +5,8 @@
  */
 package oregontrail.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author mellissah.
