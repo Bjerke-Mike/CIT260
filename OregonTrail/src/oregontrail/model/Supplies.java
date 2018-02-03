@@ -5,11 +5,13 @@
  */
 package oregontrail.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Mike
  */
-public class Supplies {
+public class Supplies implements Serializable {
     private int money;
     private int food;
     private int ammo;
