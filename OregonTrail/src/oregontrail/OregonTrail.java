@@ -6,10 +6,10 @@
 package oregontrail;
 
 import oregontrail.model.Actor;
-import oregontrail.model.Game;
+import oregontrail.model.Locations;
 import oregontrail.model.Player;
-import oregontrail.model.ResourceScene;
 import oregontrail.model.RegularScene;
+import oregontrail.model.ResourceScene;
 
 /**
  *
@@ -28,6 +28,12 @@ public class OregonTrail {
         System.out.println(Actor.CoyoteAttack.getName());
         System.out.println(Actor.CoyoteAttack.getDescription());
         System.out.println(playerOne.games.toString());
+        System.out.println(RegularScene.desert.getName());
+        System.out.println(RegularScene.desert.getDescription());
+        System.out.println(ResourceScene.fort.getName());
+        System.out.println(ResourceScene.fort.getDescription());
+        System.out.println(Locations.Independence.getDescription());
+        System.out.println(Locations.Independence.getDirections());
         
     }
     
