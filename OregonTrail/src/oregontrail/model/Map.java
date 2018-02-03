@@ -15,9 +15,11 @@ public class Map implements Serializable {
     
     //class variables
     private int plannedCourse;
-    private int lost;
+    private boolean lost;
 
     public Map() {
+        plannedCourse = 1;
+        lost = false;
     }
     
     public int getPlannedCourse() {
@@ -28,21 +30,22 @@ public class Map implements Serializable {
         this.plannedCourse = plannedCourse;
     }
 
-    public int getLost() {
+    public boolean getLost() {
         return lost;
     }
 
-    public void setLost(int lost) {
+    public void setLost(boolean lost) {
         this.lost = lost;
     }    
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + this.plannedCourse;
-        hash = 67 * hash + this.lost;
+        int hash = 5;
+        hash = 23 * hash + this.plannedCourse;
+        hash = 23 * hash + (this.lost ? 1 : 0);
         return hash;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -68,6 +71,7 @@ public class Map implements Serializable {
     @Override
     public String toString() {
         return "Map{" + "plannedCourse=" + plannedCourse + ", lost=" + lost + '}';
-    }  
+    }
+
     
 }
