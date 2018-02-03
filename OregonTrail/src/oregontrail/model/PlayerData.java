@@ -14,22 +14,16 @@ import java.util.Objects;
  */
 public class PlayerData implements Serializable {
     
-    private String playerName;
     private int oxenQuality;
     private int health;
     private int rations;
 
     public PlayerData() {
+        oxenQuality = 100;
+        health = 100;
+        rations = 3;
     }
     
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
     public int getOxenQuality() {
         return oxenQuality;
     }
@@ -57,7 +51,6 @@ public class PlayerData implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.playerName);
         hash = 67 * hash + this.oxenQuality;
         hash = 67 * hash + this.health;
         hash = 67 * hash + this.rations;
@@ -85,15 +78,12 @@ public class PlayerData implements Serializable {
         if (this.rations != other.rations) {
             return false;
         }
-        if (!Objects.equals(this.playerName, other.playerName)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "PlayerData{" + "playerName=" + playerName + ", oxenQuality=" + oxenQuality + ", health=" + health + ", rations=" + rations + '}';
+        return "PlayerData{" + "oxenQuality=" + oxenQuality + ", health=" + health + ", rations=" + rations + '}';
     }
     
 }
