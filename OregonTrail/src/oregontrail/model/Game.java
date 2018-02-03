@@ -17,6 +17,8 @@ public class Game implements Serializable {
     private int gameDate;
     private int mileage;
     private Player player;
+    private final Map map = new Map();
+    private final PlayerData playerData = new PlayerData();
 
     public int getGameDate() {
         return gameDate;
