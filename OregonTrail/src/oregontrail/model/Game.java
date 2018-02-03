@@ -6,6 +6,7 @@
 package oregontrail.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -38,6 +39,43 @@ public class Game implements Serializable {
 
     public void setMileage(int mileage) {
         this.mileage = mileage;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + this.gameDate;
+        hash = 71 * hash + this.mileage;
+        hash = 71 * hash + Objects.hashCode(this.map);
+        hash = 71 * hash + Objects.hashCode(this.playerData);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Game other = (Game) obj;
+        if (this.gameDate != other.gameDate) {
+            return false;
+        }
+        if (this.mileage != other.mileage) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Objects.equals(this.playerData, other.playerData)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
