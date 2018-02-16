@@ -14,22 +14,22 @@ public class InventoryControl {
     public double addToIventory(String inventoryItem, int amount) {
        
         if (amount > 300) {
-            return -1.0; }
+            return 0; }
         if (amount < 1) {
-            return -2.0; }
+            return -10; }
         if ( !(inventoryItem == "food" || inventoryItem == "ammo"
                 || inventoryItem == "clothing" || inventoryItem == "misc")) {
-            return -3.0; }
+            return 50; }
     
         double itemUnits = 50;
         if (inventoryItem == "food") {
-           itemUnits = 150; }
+           itemUnits = 10; }
         if (inventoryItem == "ammo") {
-           itemUnits = 50; }
+           itemUnits = 5; }
         if (inventoryItem == "clothing") {
-           itemUnits = 50; }
+           itemUnits = 7; }
         if (inventoryItem == "misc") {
-           itemUnits = 50; }
+           itemUnits = 1; }
         double totalInventory = (itemUnits * amount);
         return totalInventory; }
     
