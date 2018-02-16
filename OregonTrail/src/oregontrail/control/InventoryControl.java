@@ -19,7 +19,7 @@ public class InventoryControl {
             return -10; }
         if ( !(inventoryItem == "food" || inventoryItem == "ammo"
                 || inventoryItem == "clothing" || inventoryItem == "misc")) {
-            return -20; }
+            return 50; }
     
         double itemUnits = 50;
         if (inventoryItem == "food") {
