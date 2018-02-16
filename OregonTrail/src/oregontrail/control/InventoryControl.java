@@ -14,12 +14,12 @@ public class InventoryControl {
     public double addToIventory(String inventoryItem, int amount) {
        
         if (amount > 300) {
-            return 0; }
+            return -1.0; }
         if (amount < 1) {
-            return -10; }
+            return -2.0; }
         if ( !(inventoryItem == "food" || inventoryItem == "ammo"
                 || inventoryItem == "clothing" || inventoryItem == "misc")) {
-            return 50; }
+            return -3.0; }
     
         double itemUnits = 50;
         if (inventoryItem == "food") {
