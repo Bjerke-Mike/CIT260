@@ -5,8 +5,6 @@
  */
 package oregontrail.control;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,14 +16,6 @@ public class ShoppingControlTest {
     
     public ShoppingControlTest() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of calculatePrice method, of class ShoppingControl.
@@ -33,15 +23,26 @@ public class ShoppingControlTest {
     @Test
     public void testCalculatePrice() {
         System.out.println("calculatePrice");
-        int position = 0;
-        String inventoryItem = "";
+        
+        // Test Matrix 1
+        System.out.println("\tTest Matrix 1");
+        
+        // Define Variables
+        int position = 3;
+        String inventoryItem = "food";
+        
+        // Define expected results
+        double expResult = 0.70;
+        
+        //call the control
         ShoppingControl instance = new ShoppingControl();
-        double expResult = 0.0;
         double result = instance.calculatePrice(position, inventoryItem);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 1 - passed!\n");
     }
-
     
 }
