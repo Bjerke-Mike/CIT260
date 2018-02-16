@@ -28,22 +28,40 @@ public class InventoryControlTest {
         System.out.println("/tTest Matrix 1");
         
         //Define Variables
-        String inventoryItem = "";
-        int amount = 0;
+        String inventoryItem = "food";
+        int amount = 30;
         
          //Call the control
         InventoryControl instance = new InventoryControl();
         
         //Define expected results
-        double expResult = 0.0;
+        double expResult = 300;
         double result = instance.addToIventory(inventoryItem, amount);
         
         // test to see if the result returned equals the expected result
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0.001);
         
         // Output Test passed
         System.out.println("\tTest Matrix 1 - passed!\n");
         
+        //*********************************************************
+        
+        //Test Matrix 2
+        System.out.println("/tTest Matrix 2");
+        
+        //Define Variables
+        inventoryItem = "food";
+        amount = 2;
+        
+        //Define expected results
+        expResult = 20;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 2 - passed!\n");
     }
     
 }
