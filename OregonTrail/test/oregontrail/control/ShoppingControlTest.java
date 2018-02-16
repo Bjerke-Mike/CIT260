@@ -44,8 +44,9 @@ public class ShoppingControlTest {
         // Output Test passed
         System.out.println("\tTest Matrix 1 - passed!\n");
 
+        // **************************************************
         
-        // Test Matrix 1
+        // Test Matrix 2
         System.out.println("\tTest Matrix 2");
         
         // Define Variables
@@ -64,7 +65,110 @@ public class ShoppingControlTest {
         // Output Test passed
         System.out.println("\tTest Matrix 2 - passed!\n");
 
-
+        // **************************************************
+        
+        // Test Matrix 3
+        System.out.println("\tTest Matrix 3");
+        
+        // Define Variables
+        position = -1;
+        inventoryItem = "food";
+        
+        // Define expected results
+        expResult = -2.0;
+        
+        //call the control
+        result = instance.calculatePrice(position, inventoryItem);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 3 - passed!\n");
+    
+        // **************************************************
+        
+        // Test Matrix 4
+        System.out.println("\tTest Matrix 4");
+        
+        // Define Variables
+        position = 4;
+        inventoryItem = "mystery";
+        
+        // Define expected results
+        expResult = -3.0;
+        
+        //call the control
+        result = instance.calculatePrice(position, inventoryItem);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 4 - passed!\n");
+        
+        // **************************************************
+        
+        // Test Matrix 5
+        System.out.println("\tTest Matrix 5");
+        
+        // Define Variables
+        position = 1;
+        inventoryItem = "food";
+        
+        // Define expected results
+        expResult = .50;
+        
+        //call the control
+        result = instance.calculatePrice(position, inventoryItem);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 5 - passed!\n");
+        
+        // **************************************************
+        
+        // Test Matrix 6
+        System.out.println("\tTest Matrix 6");
+        
+        // Define Variables
+        position = 5;
+        inventoryItem = "food";
+        
+        // Define expected results
+        expResult = 0.90;
+        
+        //call the control
+        result = instance.calculatePrice(position, inventoryItem);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 6 - passed!\n");
+       
+        // **************************************************
+        
+        // Test Matrix 7
+        System.out.println("\tTest Matrix 7");
+        
+        // Define Variables
+        position = 5;
+        inventoryItem = "clothing";
+        
+        // Define expected results
+        expResult = 1.70;
+        
+        //call the control
+        result = instance.calculatePrice(position, inventoryItem);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 7 - passed!\n");
     }
     
 }
