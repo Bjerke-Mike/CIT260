@@ -10,7 +10,7 @@ package oregontrail.control;
  * @author Mellisa Holland & Mike Bjerke.
  */
 public class ShoppingControl {
-    
+        
     static public double calculatePrice(int position, String inventoryItem) {
         if (position > 5) {
             return -1.0; }
@@ -19,19 +19,18 @@ public class ShoppingControl {
         if ( !(inventoryItem == "food" || inventoryItem == "ammo"
                 || inventoryItem == "clothing" || inventoryItem == "misc")) {
             return -3.0; }
-        /*
-        basePrice = 0.40
-        IF (inventoryItem = “ammo”) THEN
-            basePrice = 0.80
-        IF (inventoryItem = “clothing”) THEN
-            basePrice = 1.20
-        IF (inventoryItem = “misc”) THEN
-            basePrice = 1.00
-        totalPrice = position * 0.10 + basePrice
-        RETURN totalPrice
-        */
-        return 0.0;
         
+        double basePrice = 0.40;
+        if (inventoryItem == "ammo") {
+            basePrice = 0.80; }
         
+        if (inventoryItem == "clothing") {
+            basePrice = 1.20; }
+        
+        if (inventoryItem == "misc") {
+            basePrice = 1.00; }
+        
+        double totalPrice = position * 0.10 + basePrice;
+        return totalPrice;
     }
 }
