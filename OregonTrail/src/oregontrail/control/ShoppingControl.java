@@ -30,6 +30,5 @@ public class ShoppingControl {
         double totalPrice = position * 0.10 + basePrice;
         return totalPrice;
     }
-
    
 }
