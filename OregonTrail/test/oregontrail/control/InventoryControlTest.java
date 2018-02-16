@@ -62,6 +62,102 @@ public class InventoryControlTest {
         
         // Output Test passed
         System.out.println("\tTest Matrix 2 - passed!\n");
+        
+        //**********************************************************
+        
+        //Test Matrix 3
+        System.out.println("/tTest Matrix 3");
+        
+        //Define Variables
+        inventoryItem = "food";
+        amount = 10;
+        
+        //Define expected results
+        expResult = 100;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 3 - passed!\n");
+        
+        //***********************************************************
+        
+        //Test Matrix 4
+        System.out.println("/tTest Matrix 4");
+        
+        //Define Variables
+        inventoryItem = "mystery";
+        amount = 50;
+        
+        //Define expected results
+        expResult = -20;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 4 - passed!\n");
+        
+        //*************************************************************
+        
+        //Test Matrix 5
+        System.out.println("/tTest Matrix 5");
+        
+        //Define Variables
+        inventoryItem = "food";
+        amount = 1;
+        
+        //Define expected results
+        expResult = 10;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 5 - passed!\n");
+        
+        //*****************************************************
+        
+        //Test Matrix 6
+        System.out.println("/tTest Matrix 6");
+        
+        //Define Variables
+        inventoryItem = "clothing";
+        amount = 7;
+        
+        //Define expected results
+        expResult = 49;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 6 - passed!\n");
+        
+        //*******************************************************
+        
+        //Test Matrix 7
+        System.out.println("/tTest Matrix 7");
+        
+        //Define Variables
+        inventoryItem = "clothing";
+        amount = 30;
+        
+        //Define expected results
+        expResult = 210;
+        result = instance.addToIventory(inventoryItem, amount);
+        
+        // test to see if the result returned equals the expected result
+        assertEquals(expResult, result, 0.001);
+        
+        // Output Test passed
+        System.out.println("\tTest Matrix 7 - passed!\n");
+        
     }
     
 }
