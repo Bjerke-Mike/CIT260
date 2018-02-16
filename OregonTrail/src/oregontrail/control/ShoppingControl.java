@@ -12,6 +12,7 @@ package oregontrail.control;
 public class ShoppingControl {
     
     public double calculatePrice( int position, String inventoryItem) {
+        return 0;
         /*IF (position > 5) THEN
             RETURN -1.0
           IF (position < 1) THEN
