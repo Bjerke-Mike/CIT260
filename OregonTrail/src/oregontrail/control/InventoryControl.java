@@ -33,4 +33,25 @@ public class InventoryControl {
         double totalInventory = (itemUnits * amount);
         return totalInventory; }
     
+    public double inventoryWeight(int food, int ammo, int clothing,
+                                  int miscSupplies) {
+        double totalWeight = 0.0;
+        if (food < 0 || food > 2000){
+            return -1.0;
+        }
+        totalWeight += (double) food;
+        if (ammo < 0 || ammo > 200){
+            return -1.0;
+        }
+        totalWeight += (double) ammo * 0.2;
+        if (clothing < 0 || clothing > 10){
+            return -1.0;
+        }
+        totalWeight += (double) clothing * 7.5;
+        if (miscSupplies < 0 || miscSupplies > 100){
+            return -1.0;
+        }
+        totalWeight += (double) miscSupplies * 5.0;
+        return totalWeight;
+    }
 }
