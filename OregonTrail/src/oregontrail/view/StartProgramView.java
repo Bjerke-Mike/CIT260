@@ -13,6 +13,7 @@ import oregontrail.model.Player;
  * @author Mike
  */
 public class StartProgramView {
+    
     public void displayStartProgramView(){
         
         boolean endOfView = false;
@@ -27,7 +28,7 @@ public class StartProgramView {
         
     }
     
-   private String [] getInputs() {
+   private String[] getInputs() {
        
        String inputs[] = null;
        
@@ -45,58 +46,43 @@ public class StartProgramView {
        
             if (inputs[0].length() < 1) {
                 System.out.println("You must enter a non-blank value.");
-            continue;
+                continue;
             }
             else {
                 valid = true;
             }
         } 
        
-       Assign the value to the first position in the inputs array
-       
-       
+        //Assign the value to the first position in the inputs array
         return inputs;
         }
-       /*
-        System.out.println("*** getInputs called ***");
-       
-       String[] inputs = new String[1];
-       inputs[0] = "testInput";
-       
-       return inputs;  
-       */
    
-   private boolean doAction(String[] inputs) {
-       /*
-       Convert input values to the appropriate database
-       Call a control layer method to perform the action
+    private boolean doAction(String[] inputs) {
        
-       IF the control layer method returns to an error then
-        display an error message
-        RETURN false (repeats the current view)
-       ENDIF
+       //Convert input values to the appropriate database
+       //Call a control layer method to perform the action
        
-       DISPLAY a success message
+       //IF the control layer method returns to an error then
+        //display an error message
+        //RETURN false (repeats the current view)
+       //ENDIF
        
-       create the new view object
-       display the new view
+       System.out.println(""); //DISPLAY a success message
        
-       RETURN true (Terminates the current view)
-       */
+       //create the new view object
+       //display the new view
+
+       return true; //(Terminates the current view)
        
-      
-       //System.out.println("*** doAction called ***");
-       //System.out.println("\tinputs = " + inputs[0]);
-       
-       //return true;
-   
-    private void displayBanner(){
+    }
+    
+    private void displayBanner() {
         System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
     }
     
-    private String promptName(){
+    private String promptName() {
         return "Melissa and Mike";
     }
-    
+     
 }
 
