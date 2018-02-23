@@ -25,25 +25,6 @@ public class StartProgramView {
         while (endOfView != true);
         
     }
-        
-        /*
-        displayBanner();
-        String playerName = null;
-        do {
-            playerName = promptName();
-            if (playerName == null || playerName == "\n"){
-                System.out.println("The name you entered is invalid.\n" + 
-                                   "Would you like to try again? (Y/N)");
-            }
-        }
-        while (playerName == null);
-        Player player;
-        player = new Player();
-        player.setName(playerName);
-        
-        return;
-        */
-        
     
     private void displayBanner(){
         System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
@@ -55,19 +36,62 @@ public class StartProgramView {
     }
     
    private String [] getInputs() {
-       System.out.println("*** getInputs called ***");
+       
+       inputs = new String array one element long
+       
+       Display a description of the view
+       
+       valid = false;
+       while(valid == false) {
+           System.out.println("Please enter an action.");
+       
+            Get the value entered from the keyboard
+            Trim off leading and trailing blanks from the value
+                }
+       
+        if (length < 1) {
+            System.out.println("You must enter a non-blank value.");
+            continue;
+        } 
+       
+       Assign the value to the first position in the inputs array
+       
+       valid = true (ends the loop)
+       
+      return inputs;
+       /*
+        System.out.println("*** getInputs called ***");
        
        String[] inputs = new String[1];
        inputs[0] = "testInput";
        
-       return inputs;        
+       return inputs;  
+       */
    } 
    
    private boolean doAction(String[] inputs) {
-       System.out.println("*** doAction called ***");
-       System.out.println("\tinputs = " + inputs[0]);
+       /*
+       Convert input values to the appropriate database
+       Call a control layer method to perform the action
        
-       return true;
+       IF the control layer method returns to an error then
+        display an error message
+        RETURN false (repeats the current view)
+       ENDIF
+       
+       DISPLAY a success message
+       
+       create the new view object
+       display the new view
+       
+       RETURN true (Terminates the current view)
+       */
+       
+      
+       //System.out.println("*** doAction called ***");
+       //System.out.println("\tinputs = " + inputs[0]);
+       
+       //return true;
    }
    
 }
