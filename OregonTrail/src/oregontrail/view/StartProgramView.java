@@ -53,6 +53,9 @@ public class StartProgramView {
             }
         } 
        
+        char firstPosition = inputs[0].charAt(0);
+        inputs[0] = inputs[0].valueOf(firstPosition);
+        inputs[0] = inputs[0].toUpperCase();
         //Assign the value to the first position in the inputs array
         return inputs;
         }
