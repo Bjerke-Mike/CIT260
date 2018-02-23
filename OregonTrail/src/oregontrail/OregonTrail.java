@@ -10,6 +10,7 @@ import oregontrail.model.Locations;
 import oregontrail.model.Player;
 import oregontrail.model.RegularScene;
 import oregontrail.model.ResourceScene;
+import oregontrail.view.StartProgramView;
 
 /**
  *
@@ -21,6 +22,13 @@ public class OregonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
+        
+        
+        /*
         Player playerOne = new Player();
         playerOne.setName("Missy");
         
@@ -33,7 +41,7 @@ public class OregonTrail {
         System.out.println(RegularScene.desert.getName() + " " + RegularScene.desert.getDescription());
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
         System.out.println(playerOne.supplies.toString());
-        
+        */
     }
     
 }
