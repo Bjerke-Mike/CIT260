@@ -13,17 +13,17 @@ import oregontrail.model.Player;
  */
 public class StartProgramView {
     public void displayStartProgramView(){
-        /*
-        endOfView = false
-        DO
-            inputs = getInputs()
-            IF no inputs were entered OR the first input is Q
-                RETURN
-            ENDIF
-            endOfView = doAction(inputs)
-        WHILE endOfView != true 
-        */
-        String[] inputs = this.getInputs();
+        
+        boolean endOfView = false;
+        do {
+            String inputs[] = getInputs();
+            if (inputs[0] == null || inputs[0] == "Q"){
+                return;
+            }
+            endOfView = doAction(inputs);
+        }
+        while (endOfView != true);
+        
     }
         
         /*
