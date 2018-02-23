@@ -5,6 +5,7 @@
  */
 package oregontrail.view;
 
+import java.util.Scanner;
 import oregontrail.model.Player;
 
 /**
@@ -26,39 +27,36 @@ public class StartProgramView {
         
     }
     
-    private void displayBanner(){
-        System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
-        return;
-    }
-    
-    private String promptName(){
-        return "Melissa and Mike";
-    }
-    
    private String [] getInputs() {
        
-       inputs = new String array one element long
+       String inputs[] = null;
        
-       Display a description of the view
+       displayBanner();
        
-       valid = false;
+       boolean valid = false;
        while(valid == false) {
            System.out.println("Please enter an action.");
        
-            Get the value entered from the keyboard
-            Trim off leading and trailing blanks from the value
-                }
+            Scanner sc = new Scanner(System.in);
+            inputs[0] = sc.nextLine();  //Get the value entered from the keyboard
+            
+            inputs[0] = inputs[0].trim();
+            
        
-        if (length < 1) {
-            System.out.println("You must enter a non-blank value.");
+            if (inputs[0].length() < 1) {
+                System.out.println("You must enter a non-blank value.");
             continue;
+            }
+            else {
+                valid = true;
+            }
         } 
        
        Assign the value to the first position in the inputs array
        
-       valid = true (ends the loop)
        
-      return inputs;
+        return inputs;
+        }
        /*
         System.out.println("*** getInputs called ***");
        
@@ -67,7 +65,6 @@ public class StartProgramView {
        
        return inputs;  
        */
-   } 
    
    private boolean doAction(String[] inputs) {
        /*
@@ -92,7 +89,14 @@ public class StartProgramView {
        //System.out.println("\tinputs = " + inputs[0]);
        
        //return true;
-   }
    
+    private void displayBanner(){
+        System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
+    }
+    
+    private String promptName(){
+        return "Melissa and Mike";
+    }
+    
 }
 
