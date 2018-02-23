@@ -55,6 +55,31 @@ public class StartProgramView {
     }
     
    private String [] getInputs() {
+       /*
+       inputs = new String array one element long
+       
+       Display a description of the view
+       
+       valid = false
+       WHILE valid == false (no input value has been entered)
+       
+        Display the prompt message
+        Get the value entered from the keyboard
+        Trim off leading and trailing blanks from the value
+       
+        IF length of the value < 1 THEN
+            Display "You must enter a non-blank value"
+            Continue (move to the top of the loop and repeat)
+        ENDIF
+       
+       Assign the value to the first position in the inputs array
+       
+       valid = true (ends the loop)
+       
+      ENDWHILE
+       
+      RETURN inputs
+       */
        System.out.println("*** getInputs called ***");
        
        String[] inputs = new String[1];
