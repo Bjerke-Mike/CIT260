@@ -12,12 +12,28 @@ import java.util.Scanner;
  * @author Mike
  */
 class MainMenuView {
-    public void displayMainMenuView() {
+    public boolean displayMainMenuView() {
+        char inputChar; 
         boolean endView = false;
-        do {
-            char inputChar = getInputChar();
+        
+        inputChar = getInputChar();
+        
+        switch (inputChar) {
+            case 'N': 
+               startNewGame(); 
+               break;
+            case 'R':
+               restartGame();
+               break;
+            case 'H':
+                getHelp();
+                break;
+            case 'E':
+                return true;
+            default: 
+                System.out.println("Invalid menu item.");
         }
-        while (endView = false);
+        return false; 
     }
     
     private char getInputChar() {
