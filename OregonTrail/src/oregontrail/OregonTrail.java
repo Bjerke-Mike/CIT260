@@ -6,6 +6,7 @@
 package oregontrail;
 
 import oregontrail.model.Actor;
+import oregontrail.model.Game;
 import oregontrail.model.Locations;
 import oregontrail.model.Player;
 import oregontrail.model.RegularScene;
@@ -21,6 +22,9 @@ public class OregonTrail {
     /**
      * @param args the command line arguments
      */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
@@ -42,6 +46,23 @@ public class OregonTrail {
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
         System.out.println(playerOne.supplies.toString());
         */
+        
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+    
+    public static void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        OregonTrail.currentGame = currentGame;
     }
     
 }
