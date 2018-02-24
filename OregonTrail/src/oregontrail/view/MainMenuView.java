@@ -10,5 +10,7 @@ package oregontrail.view;
  * @author Mike
  */
 class MainMenuView {
-    
+    public void displayMainMenuView() {
+        System.out.println("--- displayMainMenuView() called ***");
+    }
 }
