@@ -23,12 +23,10 @@ public class StartProgramView {
         do {
             String inputs;
             inputs = getInputs().trim();
-            System.out.println("Input: " + inputs);
             if (inputs == null || (inputs.length() == 1 &&
                     (inputs.charAt(0) == 'q' || inputs.charAt(0) == 'Q'))){
                 return;
             }
-            System.out.println("Should not reach here");
             endOfView = doAction(inputs);
         }
         while (endOfView != true);
