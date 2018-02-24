@@ -21,7 +21,9 @@ public class StartProgramView {
         
         boolean endOfView = false;
         do {
-            String inputs = getInputs();
+            String inputs;
+            inputs = getInputs().trim();
+            System.out.println("Input: " + inputs);
             if (inputs == null || inputs == "q" || inputs == "Q"){
                 return;
             }
