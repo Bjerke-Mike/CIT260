@@ -91,7 +91,6 @@ class HelpMenuView {
         System.out.println("*** displayDelivery() called***");
     }
 
-    
     private void displayBanner(){
         System.out.println("\n\tG - What is the goal of the game?\n" +
                            "\tM - How to move\n" +
