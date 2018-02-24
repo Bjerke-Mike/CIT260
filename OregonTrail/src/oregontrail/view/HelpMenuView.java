@@ -23,7 +23,7 @@ class HelpMenuView {
             case 'G': 
                displayGoal(); 
                break;
-            case 'R':
+            case 'M':
                displayMove();
                break;
             case 'E':
