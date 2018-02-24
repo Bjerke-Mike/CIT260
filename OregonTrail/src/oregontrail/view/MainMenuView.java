@@ -71,13 +71,6 @@ class MainMenuView {
         return inputChar;
     }
     
-    private void displayBanner(){
-        System.out.println("\n\tN - Start new game\n" +
-                           "\tR - Restart existing game\n" +
-                           "\tH - Get help on how to play the game\n" +
-                           "\tE - Exit");
-    }
-    
     private void doAction() {
         System.out.println("*** doAction has been called ***");
     }
@@ -95,6 +88,17 @@ class MainMenuView {
     
     private void getHelp() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        boolean exitHelpMenu;
+        exitHelpMenu = false;
+        while(!exitHelpMenu) {
+            exitHelpMenu = helpMenuView.displayHelpMenuView();
+        }
+    }
+
+    private void displayBanner(){
+        System.out.println("\n\tN - Start new game\n" +
+                           "\tR - Restart existing game\n" +
+                           "\tH - Get help on how to play the game\n" +
+                           "\tE - Exit");
     }
 }
