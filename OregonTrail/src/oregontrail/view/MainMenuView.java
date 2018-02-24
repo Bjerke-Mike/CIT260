@@ -64,7 +64,7 @@ class MainMenuView {
                     valid = true;
                 }
                 else {
-                    System.out.println("You must enter N, R, H, or E.");
+                    System.out.println("Invalid menu item.");
                 }
             }
         } 
@@ -95,6 +95,7 @@ class MainMenuView {
     }
     
     private void getHelp() {
-       System.out.println("*** getHelp has been called ***");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
     }
 }
