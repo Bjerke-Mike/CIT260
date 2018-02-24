@@ -27,6 +27,7 @@ public class StartProgramView {
             if (inputs == null || inputs == "q" || inputs == "Q"){
                 return;
             }
+            System.out.println("Should not reach here");
             endOfView = doAction(inputs);
         }
         while (endOfView != true);
