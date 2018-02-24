@@ -77,7 +77,7 @@ public class StartProgramView {
                          + "\n=================================================");
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuCheck = mainMenuView.displayMainMenuView();
-        return true;
+        return mainMenuCheck;
     }
     
     private void displayBanner() {
