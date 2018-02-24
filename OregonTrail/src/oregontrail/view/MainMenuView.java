@@ -91,7 +91,6 @@ class MainMenuView {
     private void restartGame() {
        StartExistingGameView startExistingGameView = new StartExistingGameView();
        startExistingGameView.displayStartExistingGameView();
-       System.out.println("*** startNewGame has been called ***");
     }
     
     private void getHelp() {
