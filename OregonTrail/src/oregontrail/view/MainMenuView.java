@@ -83,13 +83,16 @@ class MainMenuView {
     }
     
     private void startNewGame() {
-        GameControl.createNewGame(OregonTrail.getPlayer());   //Create a new Game
-        GameMenuView gameMenuView = new GameMenuView();  //gameMenuView = create a new GameMenuView object
-        gameMenuView.displayGameMenuView(); 
+       // GameControl.createNewGame(OregonTrail.getPlayer());   //Create a new Game
+       // GameMenuView gameMenuView = new GameMenuView();  //gameMenuView = create a new GameMenuView object
+       // gameMenuView.displayGameMenuView(); 
+       StartExistingGameView startExistingGameView = new StartExistingGameView();
+       startExistingGameView.displayStartExistingGameView();
+       System.out.println("*** startNewGame has been called ***");
     }
     
     private void restartGame() {
-        System.out.println("*** restartGame has been called ***");
+        
     }
     
     private void getHelp() {
