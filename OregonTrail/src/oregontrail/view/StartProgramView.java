@@ -6,6 +6,7 @@
 package oregontrail.view;
 
 import java.util.Scanner;
+import oregontrail.control.GameControl;
 import oregontrail.model.Player;
 
 /**
@@ -13,6 +14,8 @@ import oregontrail.model.Player;
  * @author Mike
  */
 public class StartProgramView {
+    
+    private String playersName;
     
     public void displayStartProgramView(){
         
@@ -33,18 +36,17 @@ public class StartProgramView {
        String inputs[] = null;
        
        displayBanner();
-       
+       String inputValue = null;
        boolean valid = false;
        while(valid == false) {
            System.out.println("Please enter an action.");
        
             Scanner sc = new Scanner(System.in);
-            inputs[0] = sc.nextLine();  //Get the value entered from the keyboard
+            inputValue = sc.nextLine();  //Get the value entered from the keyboard
             
-            inputs[0] = inputs[0].trim();
+            inputValue = inputValue.trim();
             
-       
-            if (inputs[0].length() < 1) {
+            if (inputValue.length() < 1) {
                 System.out.println("You must enter a non-blank value.");
                 continue;
             }
@@ -53,30 +55,27 @@ public class StartProgramView {
             }
         } 
        
-        char firstPosition = inputs[0].charAt(0);
-        inputs[0] = inputs[0].valueOf(firstPosition);
-        inputs[0] = inputs[0].toUpperCase();
         //Assign the value to the first position in the inputs array
+        inputs[0] = inputValue;
         return inputs;
         }
    
-    private boolean doAction(String[] inputs) {
+    private boolean doAction(String inputs[]) {
        
-       //Convert input values to the appropriate database
-       //Call a control layer method to perform the action
-       
-       //IF the control layer method returns to an error then
-        //display an error message
-        //RETURN false (repeats the current view)
-       //ENDIF
-       
-       System.out.println(""); //DISPLAY a success message
-       
-       //create the new view object
-       //display the new view
-
-       return true; //(Terminates the current view)
-       
+        playersName = inputs[0];
+        Player player = GameControl.savePlayer(playersName);
+        if (player == null) {
+            System.out.println("Could not create the player. " +
+                               "Enter a different name.");
+            return false;
+        }
+        System.out.println("================================================="
+                         + "\nWelcome to the game " + playersName
+                         + "\nWe hope you have a lot of fun!"
+                         + "\n=================================================");
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+        return true;
     }
     
     private void displayBanner() {
