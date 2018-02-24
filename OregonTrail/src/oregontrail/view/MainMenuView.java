@@ -60,4 +60,19 @@ class MainMenuView {
                            "\tE - Exit");
     }
     
+    private void doAction() {
+        System.out.println("*** doAction has been called ***");
+    }
+    
+    private void startNewGame() {
+        System.out.println("*** startNewGame has been called ***");
+    }
+    
+    private void restartGame() {
+        System.out.println("*** restartGame has been called ***");
+    }
+    
+    private void getHelp() {
+       System.out.println("*** getHelp has been called ***");
+    }
 }
