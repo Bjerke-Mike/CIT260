@@ -5,10 +5,16 @@
  */
 package oregontrail.control;
 
+import oregontrail.model.Player;
+
 /**
  *
  * @author mellissah.
  */
 public class GameControl {
     
+    public static Player savePlayer(String name) {
+        System.out.println("--- savePlayer() called ***");
+        return new Player();
+    }
 }
