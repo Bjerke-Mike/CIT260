@@ -22,7 +22,7 @@ public class StartProgramView {
         boolean endOfView = false;
         do {
             String inputs = getInputs();
-            if (inputs == null || inputs == "Q"){
+            if (inputs == null || inputs == "q" || inputs == "Q"){
                 return;
             }
             endOfView = doAction(inputs);
