@@ -11,6 +11,10 @@ package oregontrail.view;
  */
 class MainMenuView {
     public void displayMainMenuView() {
-        System.out.println("--- displayMainMenuView() called ***");
+
+        System.out.println("\tN - Start new game\n" +
+                           "\tR - Restart existing game\n" +
+                           "\tH - Get help on how to play the game\n" +
+                           "\tE - Exit");
     }
 }
