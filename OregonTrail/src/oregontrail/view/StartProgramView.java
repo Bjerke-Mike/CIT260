@@ -24,7 +24,8 @@ public class StartProgramView {
             String inputs;
             inputs = getInputs().trim();
             System.out.println("Input: " + inputs);
-            if (inputs == null || inputs.charAt(0) == 'q' || inputs.charAt(0) == 'Q'){
+            if (inputs == null || (inputs.length() == 1 &&
+                    (inputs.charAt(0) == 'q' || inputs.charAt(0) == 'Q'))){
                 return;
             }
             System.out.println("Should not reach here");
