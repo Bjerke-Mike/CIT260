@@ -46,7 +46,7 @@ public class OregonTrail {
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
         System.out.println(playerOne.supplies.toString());
         */
-        
+        return;
     }
 
     public static Player getPlayer() {
