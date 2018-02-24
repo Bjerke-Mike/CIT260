@@ -5,6 +5,7 @@
  */
 package oregontrail.control;
 
+import oregontrail.OregonTrail;
 import oregontrail.model.Player;
 
 /**
@@ -14,7 +15,15 @@ import oregontrail.model.Player;
 public class GameControl {
     
     public static Player savePlayer(String name) {
-        System.out.println("--- savePlayer() called ***");
-        return new Player();
+        
+        if (name == null | name.length() < 1) {
+            return null;
+        }
+        
+        Player player = new Player();  // player = new Player object
+        player.setName(name);  //save the name in the player object
+        OregonTrail.setPlayer(player);  //save the player in the main class of the project
+                
+        return player; 
     }
 }
