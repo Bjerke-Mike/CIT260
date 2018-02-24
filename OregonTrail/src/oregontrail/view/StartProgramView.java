@@ -21,8 +21,8 @@ public class StartProgramView {
         
         boolean endOfView = false;
         do {
-            String inputs[] = getInputs();
-            if (inputs[0] == null || inputs[0] == "Q"){
+            String inputs = getInputs();
+            if (inputs == null || inputs == "Q"){
                 return;
             }
             endOfView = doAction(inputs);
@@ -31,22 +31,21 @@ public class StartProgramView {
         
     }
     
-   private String[] getInputs() {
+   private String getInputs() {
        
-       String inputs[] = null;
+       String inputs = null;
        
        displayBanner();
-       String inputValue = null;
        boolean valid = false;
        while(valid == false) {
-           System.out.println("Please enter an action.");
+           System.out.println("Enter the player's name below or Q to quit");
        
             Scanner sc = new Scanner(System.in);
-            inputValue = sc.nextLine();  //Get the value entered from the keyboard
+            inputs = sc.nextLine();  //Get the value entered from the keyboard
             
-            inputValue = inputValue.trim();
+            inputs = inputs.trim();
             
-            if (inputValue.length() < 1) {
+            if (inputs.length() < 1) {
                 System.out.println("You must enter a non-blank value.");
                 continue;
             }
@@ -56,13 +55,12 @@ public class StartProgramView {
         } 
        
         //Assign the value to the first position in the inputs array
-        inputs[0] = inputValue;
         return inputs;
         }
    
-    private boolean doAction(String inputs[]) {
+    private boolean doAction(String inputs) {
        
-        playersName = inputs[0];
+        playersName = inputs;
         Player player = GameControl.savePlayer(playersName);
         if (player == null) {
             System.out.println("Could not create the player. " +
