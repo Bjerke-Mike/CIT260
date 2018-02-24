@@ -64,6 +64,8 @@ public class StartProgramView {
        
         playersName = inputs;
         Player player = GameControl.savePlayer(playersName);
+        boolean mainMenuCheck;
+        
         if (player == null) {
             System.out.println("Could not create the player. " +
                                "Enter a different name.");
@@ -74,7 +76,7 @@ public class StartProgramView {
                          + "\nWe hope you have a lot of fun!"
                          + "\n=================================================");
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuCheck = mainMenuView.displayMainMenuView();
         return true;
     }
     
