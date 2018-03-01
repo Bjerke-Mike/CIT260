@@ -15,14 +15,23 @@ public class HuntingView {
     public int displayHuntingView() {
         long totalTime = 0;
         do {
+            displayBanner1();
             long startTime = System.nanoTime();
+            do{
+                ;
+            }
+            while ((System.nanoTime() - startTime) < 1500000000); // aprox 1.5 seconds
+            displayBanner2();
+            startTime = System.nanoTime();
             String inputs;
             inputs = getInputs();
             totalTime = System.nanoTime() - startTime;
             inputs = inputs.toLowerCase();
-            System.out.println(totalTime + "nanoTime.");
             if (inputs.equals("bang")) {
-                System.out.println(totalTime + "nanoTime.");
+                if (totalTime < 1500000000) { // aprox 1.5 seconds
+                    System.out.println("You got a big one!");
+                }
+                    
             }
             else {
                 totalTime = -1;
@@ -35,8 +44,6 @@ public class HuntingView {
    private String getInputs() {
        
        String inputs = null;
-       
-       displayBanner();
        boolean valid = false;
        while(valid == false) {
             Scanner sc = new Scanner(System.in);
@@ -58,8 +65,11 @@ public class HuntingView {
         }
    
 
-    private void displayBanner(){
+    private void displayBanner1(){
         System.out.println("\n\tYou go hunting.\nTYPE: bang");
     }
     
+    private void displayBanner2(){
+        System.out.println("\nTYPE: bang");
+    }
 }
