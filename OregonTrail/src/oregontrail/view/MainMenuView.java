@@ -21,6 +21,9 @@ class MainMenuView {
         inputChar = getInputChar();
         
         switch (inputChar) {
+            case 'F':
+                goHunting();
+                break;
             case 'N': 
                startNewGame(); 
                break;
@@ -60,7 +63,7 @@ class MainMenuView {
                 inputs = inputs.toUpperCase();
                 inputChar = inputs.charAt(0);
                 if (inputChar == 'N' || inputChar == 'R' || inputChar == 'H' ||
-                        inputChar == 'E') {
+                        inputChar == 'E'  || inputChar == 'F') {
                     valid = true;
                 }
                 else {
@@ -73,6 +76,12 @@ class MainMenuView {
     
     private void doAction() {
         System.out.println("*** doAction has been called ***");
+    }
+    
+    private void goHunting() {
+        HuntingView startHunting = new HuntingView();
+        int foodReceived;
+        foodReceived = startHunting.displayHuntingView();
     }
     
     private void startNewGame() {
@@ -98,6 +107,7 @@ class MainMenuView {
     private void displayBanner(){
         System.out.println("\n\tN - Start new game\n" +
                            "\tR - Restart existing game\n" +
+                           "\tF - Hunt for Food\n" +
                            "\tH - Get help on how to play the game\n" +
                            "\tE - Exit");
     }
