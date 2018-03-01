@@ -15,12 +15,12 @@ public class HuntingView {
     public int displayHuntingView() {
         long totalTime = 0;
         do {
-            displayBanner();
             long startTime = System.nanoTime();
             String inputs;
             inputs = getInputs();
             totalTime = System.nanoTime() - startTime;
             inputs = inputs.toLowerCase();
+            System.out.println(totalTime + "nanoTime.");
             if (inputs.equals("bang")) {
                 System.out.println(totalTime + "nanoTime.");
             }
