@@ -16,20 +16,25 @@ public class HuntingView {
         long totalTime = 0;
         do {
             displayBanner1();
-            long startTime = System.nanoTime();
+            long startTime = System.currentTimeMillis();
             do{
                 ;
             }
-            while ((System.nanoTime() - startTime) < 1500000000); // aprox 1.5 seconds
+            while ((System.currentTimeMillis() - startTime) < 1500); // aprox 1.5 seconds
             displayBanner2();
-            startTime = System.nanoTime();
+            startTime = System.currentTimeMillis();
             String inputs;
             inputs = getInputs();
-            totalTime = System.nanoTime() - startTime;
+            totalTime = System.currentTimeMillis() - startTime;
             inputs = inputs.toLowerCase();
             if (inputs.equals("bang")) {
-                if (totalTime < 1500000000) { // aprox 1.5 seconds
-                    System.out.println("You got a big one!");
+                if (totalTime < 2000) { // aprox 2 seconds
+                    System.out.println("You got a big one!\nThere will plenty of food tonight!");
+                    return 200;
+                }
+                else if (totalTime < 4000) { // aprox 4 seconds
+                    System.out.println("You got a small one.\nThis won't last very long.");
+                    return 100;
                 }
                     
             }
