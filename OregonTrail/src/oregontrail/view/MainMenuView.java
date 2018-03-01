@@ -82,6 +82,7 @@ class MainMenuView {
         HuntingView startHunting = new HuntingView();
         int foodReceived;
         foodReceived = startHunting.displayHuntingView();
+        System.out.println("You received " + foodReceived + " food.");
     }
     
     private void startNewGame() {
