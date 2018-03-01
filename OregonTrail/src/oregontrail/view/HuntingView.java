@@ -66,7 +66,7 @@ public class HuntingView {
    
 
     private void displayBanner1(){
-        System.out.println("\n\tYou go hunting.\nTYPE: bang");
+        System.out.println("\n\tYou go hunting.");
     }
     
     private void displayBanner2(){
