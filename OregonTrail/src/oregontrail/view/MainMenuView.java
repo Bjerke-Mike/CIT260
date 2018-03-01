@@ -108,7 +108,7 @@ class MainMenuView {
     private void displayBanner(){
         System.out.println("\n\tN - Start new game\n" +
                            "\tR - Restart existing game\n" +
-                           "\tF - Hunt for Food\n" +
+                           "\tF - hunt for Food\n" +
                            "\tH - Get help on how to play the game\n" +
                            "\tE - Exit");
     }
