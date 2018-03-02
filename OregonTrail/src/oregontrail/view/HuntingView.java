@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class HuntingView {
     private static int wordCount = 0;
-    private static String[] wordName = {"bang", "pow", "blam", "shoot"};
+    private static String[] wordName = {"pow", "bang", "shoot", "blam"};
     
     public int displayHuntingView() {
         wordCount++;
