@@ -80,7 +80,7 @@ class MainMenuView {
     
     private void goHunting() {
         HuntingView startHunting = new HuntingView();
-        int foodReceived;
+        int foodReceived = 0;
         foodReceived = startHunting.displayHuntingView();
         System.out.println("You received " + foodReceived + " food.");
     }
