@@ -78,7 +78,7 @@ public class StartProgramView {
         mainMenuCheck = false;
         while (!mainMenuCheck){
             MainMenuView mainMenuView = new MainMenuView();
-            mainMenuCheck = mainMenuView.displayMainMenuView();
+            mainMenuView.display();
         }
         return true;
     }
