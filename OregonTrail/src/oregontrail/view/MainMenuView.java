@@ -13,7 +13,8 @@ import oregontrail.control.GameControl;
  *
  * @author Mike
  */
-class MainMenuView {
+public class MainMenuView extends View {
+    
     public boolean displayMainMenuView() {
         char inputChar; 
         boolean endView = false;
@@ -111,5 +112,10 @@ class MainMenuView {
                            "\tF - hunt for Food\n" +
                            "\tH - Get help on how to play the game\n" +
                            "\tE - Exit");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
