@@ -82,7 +82,7 @@ public class MainMenuView extends View {
         boolean exitHelpMenu;
         exitHelpMenu = false;
         while(!exitHelpMenu) {
-            exitHelpMenu = helpMenuView.displayHelpMenuView();
+            exitHelpMenu = helpMenuView.display();
         }
     }
 
