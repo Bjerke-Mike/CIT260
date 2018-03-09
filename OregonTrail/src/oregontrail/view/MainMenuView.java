@@ -15,12 +15,20 @@ import oregontrail.control.GameControl;
  */
 public class MainMenuView extends View {
     
-    public boolean displayMainMenuView() {
-        super("\n\tN - Start new game\n" +
-              "\tR - Restart existing game\n" +
-              "\tF - hunt for Food\n" +
-              "\tH - Get help on how to play the game\n" +
-              "\tE - Exit");
+    public MainMenuView() {
+        super("\n"
+              + "\n\t-----------------------------------------"
+              + "\n\t| Main Menu                             |"
+              + "\n\t-----------------------------------------"
+              + "\n\tN - Start new game"
+              + "\n\tR - Restart existing game\n"
+              + "\n\tF - hunt for Food\n"
+              + "\n\tH - Get help on how to play the game\n"
+              + "\n\tE - Exit"
+              + "\n\t-----------------------------------------");
+    }
+    
+    public boolean displayMainMenuView(){
         char inputChar; 
         boolean endView = false;
         
