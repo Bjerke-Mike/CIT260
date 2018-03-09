@@ -29,7 +29,6 @@ public class HelpMenuView extends View {
         
         inputChar = getInputChar(value);
         
-        System.out.println("\n\t" + inputChar + "\n");
         switch (inputChar) {
             case 'G': 
                displayGoal(); 
