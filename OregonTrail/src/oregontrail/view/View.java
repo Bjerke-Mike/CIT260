@@ -60,7 +60,7 @@ public abstract class View implements ViewInterface {
         return value; // return the name
     }
 
-    private char getInputChar() {
+    public char getInputChar() {
         String inputs = null;
         char inputChar;
         inputChar = ' ';
