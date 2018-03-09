@@ -21,19 +21,23 @@ public class MainMenuView extends View {
               + "\n\t| Main Menu                             |"
               + "\n\t-----------------------------------------"
               + "\n\tN - Start new game"
-              + "\n\tR - Restart existing game\n"
-              + "\n\tF - hunt for Food\n"
-              + "\n\tH - Get help on how to play the game\n"
+              + "\n\tR - Restart existing game"
+              + "\n\tF - hunt for Food"
+              + "\n\tH - Get help on how to play the game"
               + "\n\tE - Exit"
               + "\n\t-----------------------------------------");
     }
     
-    public boolean displayMainMenuView(){
+    
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); //convert all uppercase
         char inputChar; 
         boolean endView = false;
         
-        inputChar = getInputChar();
+        inputChar = getInputChar(value);
         
+        System.out.println("\n\t" + inputChar + "\n");
         switch (inputChar) {
             case 'F':
                 goHunting();
@@ -53,12 +57,6 @@ public class MainMenuView extends View {
                 System.out.println("Invalid menu item.");
         }
         return false; 
-    }
-    
-    @Override
-    public boolean doAction(String value) {
-        value = value.toUpperCase(); //convert all uppercase
-        return true;
     }
     
     private void goHunting() {
@@ -87,4 +85,5 @@ public class MainMenuView extends View {
             exitHelpMenu = helpMenuView.displayHelpMenuView();
         }
     }
+
 }
