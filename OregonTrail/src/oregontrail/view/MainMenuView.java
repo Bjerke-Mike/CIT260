@@ -16,6 +16,11 @@ import oregontrail.control.GameControl;
 public class MainMenuView extends View {
     
     public boolean displayMainMenuView() {
+        super("\n\tN - Start new game\n" +
+              "\tR - Restart existing game\n" +
+              "\tF - hunt for Food\n" +
+              "\tH - Get help on how to play the game\n" +
+              "\tE - Exit");
         char inputChar; 
         boolean endView = false;
         
@@ -42,41 +47,10 @@ public class MainMenuView extends View {
         return false; 
     }
     
-    private char getInputChar() {
-       
-       String inputs = null;
-       char inputChar;
-       inputChar = ' ';
-       boolean valid = false;
-       while(valid == false) {
-            displayBanner();
-            Scanner sc = new Scanner(System.in);
-            inputs = sc.nextLine();  //Get the value entered from the keyboard
-            
-            inputs = inputs.trim();
-            
-            if (inputs.length() < 1) {
-                System.out.println("You must enter a non-blank value.");
-                continue;
-            }
-            else {
-                //Converts the string to just the first character
-                inputs = inputs.toUpperCase();
-                inputChar = inputs.charAt(0);
-                if (inputChar == 'N' || inputChar == 'R' || inputChar == 'H' ||
-                        inputChar == 'E'  || inputChar == 'F') {
-                    valid = true;
-                }
-                else {
-                    System.out.println("Invalid menu item.");
-                }
-            }
-        } 
-        return inputChar;
-    }
-    
-    private void doAction() {
-        System.out.println("*** doAction has been called ***");
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); //convert all uppercase
+        return true;
     }
     
     private void goHunting() {
@@ -104,18 +78,5 @@ public class MainMenuView extends View {
         while(!exitHelpMenu) {
             exitHelpMenu = helpMenuView.displayHelpMenuView();
         }
-    }
-
-    private void displayBanner(){
-        System.out.println("\n\tN - Start new game\n" +
-                           "\tR - Restart existing game\n" +
-                           "\tF - hunt for Food\n" +
-                           "\tH - Get help on how to play the game\n" +
-                           "\tE - Exit");
-    }
-
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
