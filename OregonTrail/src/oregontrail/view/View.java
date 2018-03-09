@@ -22,17 +22,12 @@ public abstract class View implements ViewInterface {
         this.displayMessage = message;
     }
     
-    @Override
-    public void display() {
+    public boolean display() {
         boolean done = false;
-        do {
-            // prompt for and get the players name
-            String value = this.getInput();
-            if (value.toUpperCase().equals("Q")) // user wants to quit
-                return;
-            done = this.doAction(value);
-        }
-        while (!done);
+        // prompt for and get the players name
+        String value = this.getInput();
+        done = this.doAction(value);
+        return done;
     }
     
     @Override
@@ -60,6 +55,7 @@ public abstract class View implements ViewInterface {
         return value; // return the name
     }
 
+    // converts the input string to just the capital first character
     public char getInputChar(String inputs) {
         char inputChar;
         inputChar = ' ';
