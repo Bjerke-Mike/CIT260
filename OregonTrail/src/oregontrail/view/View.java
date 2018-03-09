@@ -60,16 +60,10 @@ public abstract class View implements ViewInterface {
         return value; // return the name
     }
 
-    public char getInputChar() {
-        String inputs = null;
+    public char getInputChar(String inputs) {
         char inputChar;
         inputChar = ' ';
-        boolean valid = false;
-        while(valid == false) {
-            inputs = getInput();
-            //Converts the string to just the first character
-            inputChar = inputs.toUpperCase().charAt(0);
-        } 
+        inputChar = inputs.toUpperCase().charAt(0);
         return inputChar;
     }
     
