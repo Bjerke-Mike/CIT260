@@ -13,63 +13,28 @@ import oregontrail.model.Player;
  *
  * @author Mike
  */
-public class StartProgramView {
-    
+public class StartProgramView extends View {
     private String playersName;
-    
-    public void displayStartProgramView(){
-        
-        boolean endOfView = false;
-        do {
-            String inputs;
-            inputs = getInputs().trim();
-            if (inputs == null || (inputs.length() == 1 &&
-                    (inputs.charAt(0) == 'q' || inputs.charAt(0) == 'Q'))){
-                return;
-            }
-            endOfView = doAction(inputs);
-        }
-        while (endOfView != true);
-        
+
+    public StartProgramView() {
+        super("Enter the player's name below or Q to quit.");
     }
     
-   private String getInputs() {
+    public boolean doAction(String inputs) {
        
-       String inputs = null;
-       
-       displayBanner();
-       boolean valid = false;
-       while(valid == false) {
-           System.out.println("Enter the player's name below or Q to quit");
-       
-            Scanner sc = new Scanner(System.in);
-            inputs = sc.nextLine();  //Get the value entered from the keyboard
-            
-            inputs = inputs.trim();
-            
-            if (inputs.length() < 1) {
-                System.out.println("You must enter a non-blank value.");
-                continue;
-            }
-            else {
-                valid = true;
-            }
-        } 
-       
-        //Assign the value to the first position in the inputs array
-        return inputs;
-        }
-   
-    private boolean doAction(String inputs) {
-       
-        playersName = inputs;
-        Player player = GameControl.savePlayer(playersName);
-        
-        if (player == null) {
+        boolean endOfView = false;
+        if (inputs == null) {
             System.out.println("Could not create the player. " +
                                "Enter a different name.");
             return false;
         }
+        else if (inputs.length() == 1 &&
+                (inputs.toUpperCase().charAt(0) == 'Q')){
+            return true;
+        }
+        playersName = inputs;
+        Player player = GameControl.savePlayer(playersName);
+        
         System.out.println("================================================="
                          + "\nWelcome to the game " + playersName
                          + "\nWe hope you have a lot of fun!"
