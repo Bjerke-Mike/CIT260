@@ -37,7 +37,6 @@ public class MainMenuView extends View {
         
         inputChar = getInputChar(value);
         
-        System.out.println("\n\t" + inputChar + "\n");
         switch (inputChar) {
             case 'F':
                 goHunting();
