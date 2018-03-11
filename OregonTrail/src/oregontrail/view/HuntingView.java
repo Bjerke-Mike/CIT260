@@ -13,12 +13,16 @@ import java.util.Scanner;
  */
 public class HuntingView {
     private static int wordCount = 0;
+    private static boolean firstTime = true;
     private static String[] wordName = {"pow", "bang", "shoot", "blam"};
     
     public int displayHuntingView() {
         wordCount++;
-        if (wordCount >= 4)
-            wordCount = 0;
+        if (!firstTime) {
+            if (wordCount >= 4)
+                wordCount = 0;
+        }
+        firstTime = false;
         long totalTime = 0;
         displayBanner1();
         long startTime = System.currentTimeMillis();
@@ -51,7 +55,7 @@ public class HuntingView {
         }
         // Longer than 6 seconds or mistyped "bang"
         System.out.println("You missed it!" + 
-                "\nI hope you have food in your wagon or people may starve.");
+                "\nI hope you have food in your wagon or you may starve.");
         return 0;
     }
 
