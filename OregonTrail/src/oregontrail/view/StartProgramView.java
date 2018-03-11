@@ -51,10 +51,6 @@ public class StartProgramView extends View {
     private void displayBanner() {
         System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
     }
-    
-    private String promptName() {
-        return "Melissa and Mike";
-    }
-     
+
 }
 
