@@ -20,11 +20,11 @@ public class MainMenuView extends View {
               + "\n\t-----------------------------------------"
               + "\n\t| Main Menu                             |"
               + "\n\t-----------------------------------------"
-              + "\n\tN - Start new game"
-              + "\n\tR - Restart existing game"
-              + "\n\tF - hunt for Food"
-              + "\n\tH - Get help on how to play the game"
-              + "\n\tE - Exit"
+              + "\n\t  N - Start new game"
+              + "\n\t  R - Restart existing game"
+              + "\n\t  F - hunt for Food"
+              + "\n\t  H - Get help on how to play the game"
+              + "\n\t  E - Exit"
               + "\n\t-----------------------------------------");
     }
     
