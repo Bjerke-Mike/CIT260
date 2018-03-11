@@ -12,30 +12,29 @@ import java.util.Scanner;
  * @author Mike
  */
 public class HuntingView {
-    private static int wordCount = 0;
-    private static boolean firstTime = true;
-    private static String[] wordName = {"pow", "bang", "shoot", "blam"};
+    private static int wordCount = -1;
+    private static String[] wordName = {"bang", "shoot", "blam", "pow"};
     
     public int displayHuntingView() {
         wordCount++;
-        if (!firstTime) {
-            if (wordCount >= 4)
-                wordCount = 0;
-        }
-        firstTime = false;
+        if (wordCount >= wordName.length)
+            wordCount = 0;
         long totalTime = 0;
-        displayBanner1();
+        displayBanner();
         long startTime = System.currentTimeMillis();
         do{
             ; // do nothing while waiting for the timer to expire
         }
         while ((System.currentTimeMillis() - startTime) < 1500); // aprox 1.5 seconds
+        
+        /*
         displayBanner2(wordName[wordCount]);
-        startTime = System.currentTimeMillis();
+        StartTime = System.currentTimeMillis();
         String inputs;
         inputs = getInputs();
         totalTime = System.currentTimeMillis() - startTime;
         inputs = inputs.toLowerCase();
+        */
         if (inputs.equals(wordName[wordCount])) {
             if (totalTime <= 2000) { // aprox 2 seconds 100 to 200 food
                 System.out.println("You got a big one!\nThere will plenty of food tonight!");
@@ -83,7 +82,7 @@ public class HuntingView {
         }
    
 
-    private void displayBanner1(){
+    private void displayBanner(){
         System.out.println("\n\tYou go hunting.");
     }
     
