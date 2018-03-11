@@ -27,15 +27,11 @@ public class HuntingView {
         }
         while ((System.currentTimeMillis() - startTime) < 1500); // aprox 1.5 seconds
         
-        /*
-        displayBanner2(wordName[wordCount]);
-        StartTime = System.currentTimeMillis();
-        String inputs;
-        inputs = getInputs();
+        startTime = System.currentTimeMillis();
+        DoHunting doHunting = new DoHunting(wordName[wordCount]);
+        boolean huntingSuccess = doHunting.display();
         totalTime = System.currentTimeMillis() - startTime;
-        inputs = inputs.toLowerCase();
-        */
-        if (inputs.equals(wordName[wordCount])) {
+        if (huntingSuccess) {
             if (totalTime <= 2000) { // aprox 2 seconds 100 to 200 food
                 System.out.println("You got a big one!\nThere will plenty of food tonight!");
                 if (totalTime < 1000)
@@ -58,35 +54,8 @@ public class HuntingView {
         return 0;
     }
 
-   private String getInputs() {
-       
-       String inputs = null;
-       boolean valid = false;
-       while(valid == false) {
-            Scanner sc = new Scanner(System.in);
-            inputs = sc.nextLine();  //Get the value entered from the keyboard
-            
-            inputs = inputs.trim();
-            
-            if (inputs.length() < 1) {
-                System.out.println("You must enter a non-blank value.");
-                continue;
-            }
-            else {
-                valid = true;
-            }
-        } 
-       
-        //Assign the value to the first position in the inputs array
-        return inputs;
-        }
-   
-
     private void displayBanner(){
         System.out.println("\n\tYou go hunting.");
     }
     
-    private void displayBanner2(String wordToType){
-        System.out.println("\nTYPE: " + wordToType);
-    }
 }
