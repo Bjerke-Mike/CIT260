@@ -27,8 +27,8 @@ public class HuntingView {
         }
         while ((System.currentTimeMillis() - startTime) < 1500); // aprox 1.5 seconds
         
-        startTime = System.currentTimeMillis();
         DoHunting doHunting = new DoHunting(wordName[wordCount]);
+        startTime = System.currentTimeMillis();
         boolean huntingSuccess = doHunting.display();
         totalTime = System.currentTimeMillis() - startTime;
         if (huntingSuccess) {
