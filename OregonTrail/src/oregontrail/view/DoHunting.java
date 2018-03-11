@@ -24,6 +24,7 @@ public class DoHunting extends View {
     @Override
     public boolean doAction(String value) {
         boolean wordCheck = false;
+        value = value.toLowerCase();
         if (value.equals(wordName))
             wordCheck = true;
         return wordCheck;
