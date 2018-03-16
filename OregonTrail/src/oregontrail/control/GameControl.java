@@ -60,7 +60,7 @@ public class GameControl {
     }
     
     public static Supplies createItems() {
-        System.out.println("The createItems class has been called.");
+        //System.out.println("The createItems class has been called.");
         Supplies items;
         items = new Supplies();
         return items;
