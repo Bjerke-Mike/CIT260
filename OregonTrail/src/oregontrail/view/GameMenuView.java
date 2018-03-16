@@ -19,6 +19,7 @@ public class GameMenuView extends View {
               "\tI - View list of items in inventory.\n" +
               "\tM - Move on down the trail.\n" +
               "\tF - Hunt for food.\n" +
+              "\tS - Get average health strength.\n" +
               "\tH - Help\n" +
               "\tQ - Quit");
     }
@@ -43,6 +44,9 @@ public class GameMenuView extends View {
                 break;
             case 'F':
                 goHunting();
+                break;
+            case 'S':
+                displayStrength();
                 break;
             case 'H':
                displayHelp();
@@ -77,6 +81,10 @@ public class GameMenuView extends View {
     }
     private void displayHelp(){
         System.out.println("*** displayHelp() called***");
+    }
+    
+     private void displayStrength(){
+        System.out.println("*** displayStrength() called***");
     }
   
 }
