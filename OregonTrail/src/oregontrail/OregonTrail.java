@@ -84,5 +84,13 @@ public class OregonTrail {
     public static void setMap(Map map) {
         OregonTrail.map = map;
     }
+
+    public static void setnumOfRows(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setnumOfColumns(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
