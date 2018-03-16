@@ -34,7 +34,7 @@ public class GameControl {
            return -1;
        }
        Game game = new Game(); 
-       game.setPlayer(player); //save player in game
+       OregonTrail.setPlayer(player); //save player in game
        
        //actors = createActors()
        // Save the list of actors in the Game object
