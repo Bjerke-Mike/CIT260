@@ -36,6 +36,9 @@ public class GameControl {
        Game game = new Game(); 
        OregonTrail.setPlayer(player); //save player in game
        
+       Supplies items = createItems();
+       OregonTrail.setSupplies(items);
+       
        //actors = createActors()
        // Save the list of actors in the Game object
        // Assign an actor to the player 
