@@ -11,4 +11,9 @@ package oregontrail.control;
  */
 public class MapControl {
     
+    public static Map createMap(int numOfRows, int numOfColumns) {
+        System.out.println("The createMap class has been called.");
+        Map map = new Map();
+    }
+    
 }
