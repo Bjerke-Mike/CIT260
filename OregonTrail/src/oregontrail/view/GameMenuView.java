@@ -5,6 +5,9 @@
  */
 package oregontrail.view;
 
+import oregontrail.OregonTrail;
+import oregontrail.model.Game;
+
 /**
  *
  * @author mellissah.
@@ -59,7 +62,12 @@ public class GameMenuView extends View {
         System.out.println("You received " + foodReceived + " food.");
     }
     private void displayMap(){
-        System.out.println("*** displayMap() called***");
+        
+        Game game = new Game();
+        game = OregonTrail.getCurrentGame();
+        
+        System.out.println("Trail Map Information");
+        
     } 
     private void displayMove(){
         System.out.println("*** displayMove() called***");
