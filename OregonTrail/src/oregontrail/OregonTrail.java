@@ -8,6 +8,7 @@ package oregontrail;
 import oregontrail.model.Actor;
 import oregontrail.model.Game;
 import oregontrail.model.Locations;
+import oregontrail.model.Map;
 import oregontrail.model.Player;
 import oregontrail.model.RegularScene;
 import oregontrail.model.ResourceScene;
@@ -26,6 +27,7 @@ public class OregonTrail {
     private static Game currentGame = null;
     private static Player player = null;
     private static Supplies items = null;
+    private static Map map = null;
     
     public static void main(String[] args) {
         
@@ -73,6 +75,14 @@ public class OregonTrail {
 
     public static void setCurrentGame(Game currentGame) {
         OregonTrail.currentGame = currentGame;
+    }
+    
+    public static Map getMap() {
+        return OregonTrail.map;
+    }
+
+    public static void setMap(Map map) {
+        OregonTrail.map = map;
     }
     
 }
