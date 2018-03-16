@@ -12,10 +12,10 @@ import java.io.Serializable;
  * @author mellissah.
  */
 public class Map implements Serializable {
-    private static int numOfRows;
-    private static int numOfColumns;
     
     //class variables
+    private static int numOfRows = 0;
+    private static int numOfColumns = 0;
     private int plannedCourse;
     private boolean lost;
 
