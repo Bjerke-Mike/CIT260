@@ -6,7 +6,9 @@
 package oregontrail.control;
 
 import oregontrail.OregonTrail;
+import static oregontrail.control.MapControl.createMap;
 import oregontrail.model.Game;
+import oregontrail.model.Map;
 import oregontrail.model.Player;
 import oregontrail.model.Supplies;
 
@@ -34,7 +36,7 @@ public class GameControl {
            return -1;
        }
        Game game = new Game(); 
-       OregonTrail.setPlayer(player); //save player in game
+       OregonTrail.setPlayer(player); 
        
        Supplies items = createItems();
        OregonTrail.setSupplies(items);
@@ -44,7 +46,17 @@ public class GameControl {
        // Assign an actor to the player 
        
        
-       return 1;
+       int numOfRows = 2;
+       int numOfColumns = 3;
+       Map map;
+        map = createMap(numOfRows, numOfColumns);
+       if (map == null) {
+           return -1;
+       }
+      
+       OregonTrail.setMap(map);
+       return 1; 
+   
     }
     
     public static Supplies createItems() {
@@ -55,16 +67,5 @@ public class GameControl {
        
         //Save the list of items in the game 
     }
-    
-        /* 
-        map = createMap(noOfRows, noOfColumns, items)
-        IF map == null THEN
-        RETURN -1
-        ENDIF
-    
-        Assign the map to the game
-        RETURN 1 // indicates success 
-        */
-      
-    
+
 }
