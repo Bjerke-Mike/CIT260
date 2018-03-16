@@ -22,7 +22,6 @@ public class MainMenuView extends View {
               + "\n\t-----------------------------------------"
               + "\n\t  N - Start new game"
               + "\n\t  R - Restart existing game"
-              + "\n\t  F - hunt for Food"
               + "\n\t  H - Get help on how to play the game"
               + "\n\t  E - Exit"
               + "\n\t-----------------------------------------");
@@ -38,9 +37,6 @@ public class MainMenuView extends View {
         inputChar = getInputChar(value);
         
         switch (inputChar) {
-            case 'F':
-                goHunting();
-                break;
             case 'N': 
                startNewGame(); 
                break;
@@ -56,13 +52,6 @@ public class MainMenuView extends View {
                 System.out.println("Invalid menu item.");
         }
         return false; 
-    }
-    
-    private void goHunting() {
-        HuntingView startHunting = new HuntingView();
-        int foodReceived = 0;
-        foodReceived = startHunting.displayHuntingView();
-        System.out.println("You received " + foodReceived + " food.");
     }
     
     private void startNewGame() {
