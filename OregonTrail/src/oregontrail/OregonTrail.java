@@ -29,6 +29,7 @@ public class OregonTrail {
     private static Supplies items = null;
     private static Map map = null;
     
+    
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
