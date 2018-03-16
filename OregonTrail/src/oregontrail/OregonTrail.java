@@ -59,11 +59,11 @@ public class OregonTrail {
         OregonTrail.player = player;
     }
     
-    public Supplies getSupplies() {
+    public static Supplies getSupplies() {
         return OregonTrail.items;
     }
 
-    public void setSupplies(Supplies items) {
+    public static void setSupplies(Supplies items) {
         OregonTrail.items = items;
     }
     
