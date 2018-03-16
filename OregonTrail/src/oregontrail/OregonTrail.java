@@ -11,6 +11,7 @@ import oregontrail.model.Locations;
 import oregontrail.model.Player;
 import oregontrail.model.RegularScene;
 import oregontrail.model.ResourceScene;
+import oregontrail.model.Supplies;
 import oregontrail.view.StartProgramView;
 
 /**
@@ -24,6 +25,7 @@ public class OregonTrail {
      */
     private static Game currentGame = null;
     private static Player player = null;
+    private static Supplies items = null;
     
     public static void main(String[] args) {
         
@@ -46,7 +48,6 @@ public class OregonTrail {
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
         System.out.println(playerOne.supplies.toString());
         */
-        return;
     }
 
     public static Player getPlayer() {
@@ -57,7 +58,15 @@ public class OregonTrail {
         OregonTrail.player = new Player();
         OregonTrail.player = player;
     }
+    
+    public Supplies getSupplies() {
+        return OregonTrail.items;
+    }
 
+    public void setSupplies(Supplies items) {
+        OregonTrail.items = items;
+    }
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
