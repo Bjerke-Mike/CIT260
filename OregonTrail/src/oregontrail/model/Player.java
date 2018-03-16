@@ -36,10 +36,6 @@ public class Player implements Serializable {
     public Game games = new Game();
     public Supplies supplies = new Supplies();
     public Player health = new Player();
-    private static int poor = 1;
-    private static int fair = 2;
-    private static int good = 3;
-    private static int great = 4;
 
     public Player() {
     }
