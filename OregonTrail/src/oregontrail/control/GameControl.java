@@ -6,7 +6,9 @@
 package oregontrail.control;
 
 import oregontrail.OregonTrail;
+import oregontrail.model.Game;
 import oregontrail.model.Player;
+import oregontrail.model.Supplies;
 
 /**
  *
@@ -37,11 +39,14 @@ public class GameControl {
        //actors = createActors()
        // Save the list of actors in the Game object
        // Assign an actor to the player 
-       
-    public static InventoryItem[] createItems() {
+       return 1;
+    }
+    
+    public static Supplies createItems() {
         System.out.println("The createItems class has been called.");
-        InventoryItem items[] = new InventoryItem[];
-        return items[];
+        Supplies items;
+        items = new Supplies();
+        return items;
        
         //Save the list of items in the game 
     }
@@ -56,5 +61,5 @@ public class GameControl {
         RETURN 1 // indicates success 
         */
       
-    }
+    
 }
