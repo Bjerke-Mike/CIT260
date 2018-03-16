@@ -17,8 +17,8 @@ public class InventoryControl {
             return 0; }
         if (amount < 1) {
             return -10; }
-        if ( !(inventoryItem == "food" || inventoryItem == "ammo"
-                || inventoryItem == "clothing" || inventoryItem == "misc")) {
+        if (inventoryItem != "food" && inventoryItem != "ammo"
+                && inventoryItem != "clothing" && inventoryItem != "misc"){
             return -20; }
     
         double itemUnits = 50;
