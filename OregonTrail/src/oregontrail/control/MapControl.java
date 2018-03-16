@@ -15,19 +15,14 @@ import oregontrail.model.Map;
 public class MapControl {
     
     public static Map createMap(int numOfRows, int numOfColumns) {
-        if (numOfRows < 0, numOfColumns < 0) {
-            return null;
-        }
-        
-        if (items == null, length < 1) {
+        if (numOfRows < 0 || numOfColumns < 0) {
             return null;
         }
         
         Map map = new Map();
         
-        OregonTrail.setnumOfRows(map);
-        OregonTrail.setnumOfColumns(map);
-        
+        Map.setNumOfRows(numOfRows);
+        Map.setNumOfColumns(numOfColumns);
         
         return map;
         
