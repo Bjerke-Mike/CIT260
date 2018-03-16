@@ -14,11 +14,32 @@ import java.util.Objects;
  * @author Mike Bjerke & Melissa Holland
  */
 public class Player implements Serializable {
+
+    public static void setPoor(int poor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setFair(int fair) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setGood(int good) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setGreat(int great) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     // class variables
     private String name;
     public Game games = new Game();
     public Supplies supplies = new Supplies();
+    public Player health = new Player();
+    private static int poor = 1;
+    private static int fair = 2;
+    private static int good = 3;
+    private static int great = 4;
 
     public Player() {
     }
