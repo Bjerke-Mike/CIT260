@@ -24,8 +24,8 @@ public class MapControl {
         Map.setNumOfRows(numOfRows);
         Map.setNumOfColumns(numOfColumns);
         
-        return map;
-        
+        Map locations;
+        locations = createLocations(numOfRows, numOfColumns);
        
      /*
  
@@ -41,8 +41,16 @@ public class MapControl {
         
     assignScenesToLocations()
         
-    return map 
     */
+        return map;
+    }
+    
+    private static Map createLocations(int numOfRows, int numOfColumns){
+        System.out.println("The createLocations() has been called.");
+        Map map = new Map();
+        Map.setNumOfRows(numOfRows);
+        Map.setNumOfColumns(numOfColumns);
+        return map;
     }
     
 }
