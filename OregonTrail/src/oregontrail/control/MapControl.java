@@ -29,23 +29,6 @@ public class MapControl {
         // Assign the locations array to the map
         // Our map doesn't have locations, so this has been commented out.
         
-        int scenes = createScenes();
-
-        int questions = createQuestions();
-        
-        assignItemsToScenes();
-        
-     /*
-        
-    scenes = createScenes()
-    questions = createQuestions()
-        
-    assignQuestionsToScenes()
-    assignItemsToScenes()
-        
-    assignScenesToLocations()
-        
-    */
         return map;
     }
     
@@ -55,16 +38,6 @@ public class MapControl {
         Map.setNumOfRows(numOfRows);
         Map.setNumOfColumns(numOfColumns);
         return map;
-    }
-
-    private static int createScenes(){
-        System.out.println("The createScenes() has been called.");
-        return 5;
-    }
-    
-    private static int createQuestions(){
-        System.out.println("The createQuestions() has been called.");
-        return 5;
     }
     
 }
