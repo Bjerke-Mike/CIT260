@@ -16,21 +16,18 @@ public class ForagingControl {
     public void averageHealth() {
         int[] strengthValue = new int[4];
         
-        //call function and pass array       
-        getStrengthValue("HealthTest", strengthValue);
-        
     }
     //function signature with parameter array variables
-    public void getStrengthValue(String values) {
+    public void getStrengthValue() {
         
         //initializing and defining one dimensional array
-        String[] values = {"poor", "fair", "good", "great"};
+        int[] values = {1,2,3,4};
         
         //referencing elements items in an array
-        String poor = values[1]; //get first element in array
-        String fair = values[2]; //get second element in array
-        String good = values[3]; //get third element in array
-        String great = values[4]; //get fourth element in array
+        int poor = values[1]; //get first element in array
+        int fair = values[2]; //get second element in array
+        int good = values[3]; //get third element in array
+        int great = values[4]; //get fourth element in array
         
         
         int total = 0; //initialize total to zero
