@@ -27,7 +27,34 @@ public class GameControl {
         return player; 
     }
     
-    public static void createNewGame(Player player) {
-        System.out.println("*** createNewGame() has been called ***");
+    public static int createNewGame(Player player) {
+       if (player == null) {
+           return -1;
+       }
+       Game game = new Game(); 
+       game.setPlayer(player); //save player in game
+       
+       //actors = createActors()
+       // Save the list of actors in the Game object
+       // Assign an actor to the player 
+       
+    public static InventoryItem[] createItems() {
+        System.out.println("The createItems class has been called.");
+        InventoryItem items[] = new InventoryItem[];
+        return items[];
+       
+        //Save the list of items in the game 
+    }
+    
+        /* 
+        map = createMap(noOfRows, noOfColumns, items)
+        IF map == null THEN
+        RETURN -1
+        ENDIF
+    
+        Assign the map to the game
+        RETURN 1 // indicates success 
+        */
+      
     }
 }
