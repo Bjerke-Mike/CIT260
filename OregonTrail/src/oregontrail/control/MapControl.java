@@ -5,6 +5,7 @@
  */
 package oregontrail.control;
 
+import oregontrail.OregonTrail;
 import oregontrail.model.Map;
 
 /**
@@ -14,9 +15,39 @@ import oregontrail.model.Map;
 public class MapControl {
     
     public static Map createMap(int numOfRows, int numOfColumns) {
-        System.out.println("The createMap class has been called.");
+        if (numOfRows < 0, numOfColumns < 0) {
+            return null;
+        }
+        
+        if (items == null, length < 1) {
+            return null;
+        }
+        
         Map map = new Map();
+        
+        OregonTrail.setnumOfRows(map);
+        OregonTrail.setnumOfColumns(map);
+        
+        
         return map;
+        
+       
+     /*
+ 
+        
+    locations = createLocations(noOfRows, noOfColumns)
+    Assign the locations array to the map
+        
+    scenes = createScenes()
+    questions = createQuestions()
+        
+    assignQuestionsToScenes()
+    assignItemsToScenes()
+        
+    assignScenesToLocations()
+        
+    return map 
+    */
     }
     
 }
