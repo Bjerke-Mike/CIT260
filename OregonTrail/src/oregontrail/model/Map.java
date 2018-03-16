@@ -12,6 +12,8 @@ import java.io.Serializable;
  * @author mellissah.
  */
 public class Map implements Serializable {
+    private static int numOfRows;
+    private static int numOfColumns;
     
     //class variables
     private int plannedCourse;
@@ -36,7 +38,23 @@ public class Map implements Serializable {
 
     public void setLost(boolean lost) {
         this.lost = lost;
-    }    
+    }  
+
+    public static int getNumOfRows() {
+        return numOfRows;
+    }
+
+    public static void setNumOfRows(int numOfRows) {
+        Map.numOfRows = numOfRows;
+    }
+
+    public static int getNumOfColumns() {
+        return numOfColumns;
+    }
+
+    public static void setNumOfColumns(int numOfColumns) {
+        Map.numOfColumns = numOfColumns;
+    }
 
     @Override
     public int hashCode() {
