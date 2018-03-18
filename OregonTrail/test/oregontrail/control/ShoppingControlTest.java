@@ -29,7 +29,7 @@ public class ShoppingControlTest {
         
         // Define Variables
         int position = 3;
-        String inventoryItem = "food";
+        String inventoryItem = "Food";
         
         // Define expected results
         double expResult = 0.70;
@@ -51,7 +51,7 @@ public class ShoppingControlTest {
         
         // Define Variables
         position = 6;
-        inventoryItem = "food";
+        inventoryItem = "Food";
         
         // Define expected results
         expResult = -1.0;
@@ -72,7 +72,7 @@ public class ShoppingControlTest {
         
         // Define Variables
         position = -1;
-        inventoryItem = "food";
+        inventoryItem = "Food";
         
         // Define expected results
         expResult = -2.0;
@@ -93,7 +93,7 @@ public class ShoppingControlTest {
         
         // Define Variables
         position = 4;
-        inventoryItem = "mystery";
+        inventoryItem = "Mystery";
         
         // Define expected results
         expResult = -3.0;
@@ -113,11 +113,11 @@ public class ShoppingControlTest {
         System.out.println("\tTest Matrix 5");
         
         // Define Variables
-        position = 1;
+        position = 0;
         inventoryItem = "food";
         
         // Define expected results
-        expResult = .50;
+        expResult = .40;
         
         //call the control
         result = instance.calculatePrice(position, inventoryItem);
@@ -156,7 +156,7 @@ public class ShoppingControlTest {
         
         // Define Variables
         position = 5;
-        inventoryItem = "clothing";
+        inventoryItem = "misc";
         
         // Define expected results
         expResult = 1.70;
