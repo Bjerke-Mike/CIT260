@@ -38,7 +38,7 @@ public class ShoppingControl {
     public double calculatePrice(int position, String inventoryItem) {
         if (position > 5) {
             return -1.0; }
-        if (position < 1) {
+        if (position < 0) {
             return -2.0; }
         int itemCheck = -1;
         inventoryItem = inventoryItem.toLowerCase();
@@ -48,7 +48,7 @@ public class ShoppingControl {
         }
         if (itemCheck < 0)
             return -3.0;
-        double itemPrice = prices[position][itemCheck];
+        double itemPrice = prices[itemCheck][position];
         
         return itemPrice;
     }
