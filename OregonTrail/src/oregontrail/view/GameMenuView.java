@@ -61,7 +61,7 @@ public class GameMenuView extends View {
 
     private void goHunting() {
         HuntingView startHunting = new HuntingView();
-        int foodReceived = 0;
+        int foodReceived;
         foodReceived = startHunting.displayHuntingView();
         System.out.println("You received " + foodReceived + " food.");
     }
