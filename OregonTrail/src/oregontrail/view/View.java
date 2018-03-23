@@ -36,7 +36,7 @@ public abstract class View implements ViewInterface {
        Scanner keyboard = new Scanner(System.in);
        boolean valid = false;
        String value = null;
-       
+       // int test = 1 / (2 - 2);
        // while a valid name has not been retrieved
        while (!valid) {
             
