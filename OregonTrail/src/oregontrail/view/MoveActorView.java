@@ -5,8 +5,13 @@
  */
 package oregontrail.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
+import oregontrail.model.Location;
 import oregontrail.model.Player;
+import oregontrail.control.MapControl;
+import oregontrail.exceptions.MapControlException;
 
 /**
  *
@@ -29,6 +34,14 @@ public class MoveActorView extends View {
             return false;
         }
         Player player = OregonTrail.getPlayer();
+        // Our Actor is a random event, and doesn't move.
+        try {
+            Location newLocation = MapControl.moveActor(player, row, column);
+        } catch (MapControlException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        System.out.println("Scene Information");
         
         return true;
     }
