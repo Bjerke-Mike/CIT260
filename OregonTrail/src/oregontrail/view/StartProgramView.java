@@ -26,7 +26,7 @@ public class StartProgramView extends View {
     public boolean doAction(String inputs) {
        
         boolean endOfView = false;
-        if (inputs == null) {
+        if (inputs == null || inputs.length() < 1) {
             System.out.println("Could not create the player. " +
                                "Enter a different name.");
             return false;
@@ -36,13 +36,16 @@ public class StartProgramView extends View {
             return true;
         }
         playersName = inputs;
-        try {
-            Player player = GameControl.savePlayer(playersName);
-        } catch (GameControlException e) {
-            System.out.println(e.getMessage());
-            return false;
+        boolean validName = false;
+        while (!validName) {
+            validName = true;
+            try {
+                Player player = GameControl.savePlayer(playersName);
+            } catch (GameControlException e) {
+                System.out.println(e.getMessage());
+                return false;
+            }
         }
-        
         System.out.println("================================================="
                          + "\nWelcome to the game " + playersName
                          + "\nWe hope you have a lot of fun!"
