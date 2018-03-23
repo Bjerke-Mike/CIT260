@@ -33,7 +33,7 @@ public class GameControl {
         return player; 
     }
     
-    public static  void createNewGame(Player player)
+    public static void createNewGame(Player player)
         throws GameControlException {
        if (player == null) {
            throw new GameControlException("The player's name cannot be empty.");
