@@ -46,7 +46,7 @@ public class MainMenuView extends View {
                 startNewGame();
             } catch (GameControlException e) {
                 System.out.println(e.getMessage);
-                return true;
+                return false;
             }
         }
                break;
