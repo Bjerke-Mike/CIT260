@@ -6,6 +6,7 @@
 package oregontrail.view;
 
 import java.util.Scanner;
+import oregontrail.exceptions.GameControlException;
 
 /**
  *
@@ -46,10 +47,10 @@ public abstract class View implements ViewInterface {
             // get the value entered from the keyboard
             value = keyboard.nextLine();
             value = value.trim();
-            if (value.length() < 1) {
-                System.out.println("You must enter a non-blank value.");
-                continue;
-            }
+           // if (value.length() < 1) {
+                //System.out.println("You must enter a non-blank value.");
+                //continue;
+           // }
             break;
         }
         return value; // return the name
