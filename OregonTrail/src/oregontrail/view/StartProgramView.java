@@ -39,7 +39,7 @@ public class StartProgramView extends View {
         try {
             Player player = GameControl.savePlayer(playersName);
         } catch (GameControlException e) {
-            System.out.println(e.getMessage);
+            System.out.println(e.getMessage());
             return false;
         }
         
