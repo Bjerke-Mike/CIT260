@@ -39,7 +39,7 @@ public class MainMenuView extends View {
         
         switch (inputChar) {
             case 'N': 
-               startNewGame(); 
+               //startNewGame(); 
                break;
             case 'R':
                restartGame();
