@@ -47,7 +47,7 @@ public class MapControl {
         return map;
     }
     
-    public static Location movePlayer(Player player, int newRow, int newColumn)
+    public static Location moveActor(Player player, int newRow, int newColumn)
                                      throws MapControlException {
         if (player == null){
             throw new MapControlException("No actor to move.");
