@@ -8,6 +8,7 @@ package oregontrail.view;
 import java.util.Scanner;
 import oregontrail.OregonTrail;
 import oregontrail.control.GameControl;
+import oregontrail.exceptions.GameControlException;
 
 /**
  *
@@ -54,7 +55,7 @@ public class MainMenuView extends View {
         return false; 
     }
     
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
        GameControl.createNewGame(OregonTrail.getPlayer());   
        GameMenuView gameMenuView = new GameMenuView();
        gameMenuView.display(); 
