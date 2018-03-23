@@ -12,6 +12,7 @@ import oregontrail.model.Game;
 import oregontrail.model.Map;
 import oregontrail.model.Location;
 import oregontrail.model.Locations;
+import oregontrail.model.Player;
 
 /**
  *
@@ -46,9 +47,9 @@ public class MapControl {
         return map;
     }
     
-    public static Location moveActor(Actor actor, int newRow, int newColumn)
+    public static Location movePlayer(Player player, int newRow, int newColumn)
                                      throws MapControlException {
-        if (actor == null){
+        if (player == null){
             throw new MapControlException("No actor to move.");
         }
         Game game = OregonTrail.getCurrentGame();
@@ -61,8 +62,16 @@ public class MapControl {
         }
         int oldRow = currentRow;
         int oldColumn = currentColumn;
+        currentRow = player.getLocation().getCurrentRow();
+        currentColumn = player.getLocation().getCurrentColumn();
+        Location oldLocation = new Location();
+        oldLocation.setCurrentRow(oldRow);
+        oldLocation.setCurrentColumn(oldColumn);
+        Location newLocation = new Location();
+        newLocation.setCurrentRow(currentRow);
+        newLocation.setCurrentColumn(currentColumn);
         
-        return null;
+        return newLocation;
     }
 
     public static int getCurrentRow() {
