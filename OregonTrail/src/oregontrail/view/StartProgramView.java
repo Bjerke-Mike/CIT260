@@ -6,10 +6,7 @@
 package oregontrail.view;
 
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oregontrail.control.GameControl;
-import oregontrail.exceptions.GameControlException;
 import oregontrail.model.Player;
 
 /**
@@ -24,7 +21,7 @@ public class StartProgramView extends View {
     }
     
     public boolean doAction(String inputs) {
-      try {
+       
         boolean endOfView = false;
         if (inputs == null) {
             System.out.println("Could not create the player. " +
@@ -36,8 +33,7 @@ public class StartProgramView extends View {
             return true;
         }
         playersName = inputs;
-       
-            Player player = GameControl.savePlayer(playersName);
+        Player player = GameControl.savePlayer(playersName);
         
         System.out.println("================================================="
                          + "\nWelcome to the game " + playersName
@@ -50,11 +46,6 @@ public class StartProgramView extends View {
             mainMenuCheck = mainMenuView.display();
         }
         return true;
-        
-      } catch (GameControlException e) {
-            System.out.println(e.getMessage);
-            return false;
-       }
     }
     
     private void displayBanner() {
