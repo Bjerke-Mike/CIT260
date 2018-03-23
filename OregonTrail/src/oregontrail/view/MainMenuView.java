@@ -6,6 +6,8 @@
 package oregontrail.view;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 import oregontrail.control.GameControl;
 import oregontrail.exceptions.GameControlException;
@@ -39,8 +41,12 @@ public class MainMenuView extends View {
         
         switch (inputChar) {
             case 'N': 
-               //startNewGame(); 
-               break;
+            try {
+                startNewGame();
+            } catch (GameControlException e) {
+                System.out.println(e.getMessage());
+            }
+               return true;
             case 'R':
                restartGame();
                break;
