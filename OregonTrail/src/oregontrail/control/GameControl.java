@@ -7,6 +7,7 @@ package oregontrail.control;
 
 import oregontrail.OregonTrail;
 import static oregontrail.control.MapControl.createMap;
+import oregontrail.exceptions.GameControlException;
 import oregontrail.model.Game;
 import oregontrail.model.Map;
 import oregontrail.model.Player;
@@ -18,10 +19,10 @@ import oregontrail.model.Supplies;
  */
 public class GameControl {
     
-    public static Player savePlayer(String name) {
+    public static Player savePlayer(String name) throws GameControlException {
         
         if (name == null | name.length() < 1) {
-            return null;
+            throw new GameControlException("Can't use a blank name.");
         }
         
         Player player = new Player();  // player = new Player object
@@ -31,9 +32,9 @@ public class GameControl {
         return player; 
     }
     
-    public static int createNewGame(Player player) {
-       if (player == null) {
-           return -1;
+    public static void createNewGame(Player player) throws GameControlException {
+       if (player == null || player.getName().length() < 1) {
+           throw new GameControlException("Can't create a game without a player.");
        }
        Game game = new Game(); 
        OregonTrail.setPlayer(player); 
@@ -51,12 +52,10 @@ public class GameControl {
        Map map;
         map = createMap(numOfRows, numOfColumns);
        if (map == null) {
-           return -1;
+           throw new GameControlException("Can't create a game map.");
        }
       
        OregonTrail.setMap(map);
-       return 1; 
-   
     }
     
     public static Supplies createItems() {
