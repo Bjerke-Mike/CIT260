@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
+
 /**
  *
  * @author Mike Bjerke & Melissa Holland
@@ -17,6 +18,7 @@ public class Player implements Serializable {
 
     // class variables
     private String name;
+    private static Location location = new Location();
     public Game games = new Game();
     public Supplies supplies = new Supplies();
 
@@ -29,6 +31,14 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static Location getLocation() {
+        return location;
+    }
+
+    public static void setLocation(Location location) {
+        Player.location = location;
     }
 
     public Game getGames() {
