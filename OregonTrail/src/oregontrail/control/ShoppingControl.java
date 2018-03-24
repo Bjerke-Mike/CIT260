@@ -5,6 +5,8 @@
  */
 package oregontrail.control;
 
+import oregontrail.exceptions.ShoppingControlException;
+
 /**
  *
  * @author Mellisa Holland & Mike Bjerke.
@@ -35,11 +37,11 @@ public class ShoppingControl {
         this.prices = prices;
     }
     
-    public double calculatePrice(int position, String inventoryItem) {
+    public double calculatePrice(int position, String inventoryItem) throws ShoppingControlException {
         if (position > 5) {
-            return -1.0; }
+            throw new ShoppingControlException("The position must be greater than 5."); }
         if (position < 0) {
-            return -2.0; }
+            throw new ShoppingControlException("Invalid position."); }
         int itemCheck = -1;
         inventoryItem = inventoryItem.toLowerCase();
         for (int i = 0; i < itemNames.length; i++){
@@ -47,7 +49,7 @@ public class ShoppingControl {
                 itemCheck = i;
         }
         if (itemCheck < 0)
-            return -3.0;
+            throw new ShoppingControlException("The price cannot be negative.");
         double itemPrice = prices[itemCheck][position];
         
         return itemPrice;
