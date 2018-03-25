@@ -5,6 +5,8 @@
  */
 package oregontrail.control;
 
+import oregontrail.exceptions.ShoppingControlException;
+
 /**
  *
  * @author Mellisa Holland & Mike Bjerke.
@@ -35,19 +37,26 @@ public class ShoppingControl {
         this.prices = prices;
     }
     
-    public double calculatePrice(int position, String inventoryItem) {
+    public double calculatePrice(int position, String inventoryItem)
+                                 throws ShoppingControlException {
         if (position > 5) {
-            return -1.0; }
+            throw new ShoppingControlException("Location is too high.");
+            //return -1.0; 
+        }
         if (position < 0) {
-            return -2.0; }
+            throw new ShoppingControlException("Location is too low.");
+            //return -2.0;
+        }
         int itemCheck = -1;
         inventoryItem = inventoryItem.toLowerCase();
         for (int i = 0; i < itemNames.length; i++){
             if (inventoryItem.equals(itemNames[i]))
                 itemCheck = i;
         }
-        if (itemCheck < 0)
-            return -3.0;
+        if (itemCheck < 0) {
+            throw new ShoppingControlException("Inventory Item is invalid.");
+            //return -3.0;
+        }
         double itemPrice = prices[itemCheck][position];
         
         return itemPrice;
