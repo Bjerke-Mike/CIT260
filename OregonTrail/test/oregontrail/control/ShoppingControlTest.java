@@ -5,6 +5,7 @@
  */
 package oregontrail.control;
 import oregontrail.exceptions.ShoppingControlException;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -35,7 +36,7 @@ public class ShoppingControlTest {
         
         // Define expected results
         double expResult = 0.70;
-        System.out.println(result + ", " + expResult + ", " + errorText);
+        //System.out.println(result + ", " + expResult + ", " + errorText);
         
         //call the control
         ShoppingControl instance = new ShoppingControl();
@@ -46,7 +47,7 @@ public class ShoppingControlTest {
         }
         
         // test to see if the result returned equals the expected result
-        System.out.println(result + ", " + expResult + ", " + errorText);
+        //System.out.println(result + ", " + expResult + ", " + errorText);
         assertEquals(expResult, result, 0.001);
         assertTrue(errorText.equals("No error."));
         
@@ -220,6 +221,7 @@ public class ShoppingControlTest {
         
         // Output Test passed
         System.out.println("\tTest Matrix 7 - passed!\n");
+    
     }
     
 }
