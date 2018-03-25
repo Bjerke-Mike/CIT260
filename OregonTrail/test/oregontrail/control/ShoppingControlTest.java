@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package oregontrail.control;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oregontrail.exceptions.ShoppingControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
