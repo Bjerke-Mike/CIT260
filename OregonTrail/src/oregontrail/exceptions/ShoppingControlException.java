@@ -11,6 +11,8 @@ package oregontrail.exceptions;
  */
 public class ShoppingControlException extends Exception {
 
+    public boolean getMessage;
+    
     public ShoppingControlException() {
     }
 
@@ -29,5 +31,5 @@ public class ShoppingControlException extends Exception {
     public ShoppingControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
+
 }
