@@ -54,8 +54,7 @@ public class GameMenuView extends View {
             case 'Q':
                 return true;
             default: 
-                ErrorView.display(this.getClass().getName(),
-                                  "Invalid menu item");
+                this.console.println("Invalid menu item");
         }
         return false; 
     }
