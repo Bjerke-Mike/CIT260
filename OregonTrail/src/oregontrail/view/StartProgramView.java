@@ -53,8 +53,8 @@ public class StartProgramView extends View {
 "                         + \"\\n=================================================");
         boolean mainMenuCheck;
         mainMenuCheck = false;
+        MainMenuView mainMenuView = new MainMenuView();
         while (!mainMenuCheck){
-            MainMenuView mainMenuView = new MainMenuView();
             mainMenuCheck = mainMenuView.display();
         }
         return true;
