@@ -64,34 +64,28 @@ public class GameMenuView extends View {
         HuntingView startHunting = new HuntingView();
         int foodReceived;
         foodReceived = startHunting.displayHuntingView();
-        ErrorView.display(this.getClass().getName(),
-                          "You received " + foodReceived + " food.");
+        this.console.println("You received " + foodReceived + " food.");
     }
     private void displayMap(){
         
         Game game = new Game();
         game = OregonTrail.getCurrentGame();
         
-        ErrorView.display(this.getClass().getName(),
-                          "Trail Map Information");
+        this.console.println("Trail Map Information");
         
     } 
     private void displayMove(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayMove() called***");
+        this.console.println("*** displayMove() called***");
     }
     private void displayInventory(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayInventory() called***");
+        this.console.println("*** displayInventory() called***");
     }
     private void displayHelp(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayHelp() called***");
+        this.console.println("*** displayHelp() called***");
     }
     
      private void displayStrength(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayStrength() called***");
+        this.console.println("*** displayStrength() called***");
     }
   
 }
