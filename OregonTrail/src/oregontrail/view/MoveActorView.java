@@ -30,8 +30,7 @@ public class MoveActorView extends View {
             row = Integer.parseInt(inputs[0]);
             column = Integer.parseInt(inputs[1]);
         } catch (NumberFormatException e){
-            ErrorView.display(this.getClass().getName(),
-                          "The row and column must be a number." + e.getMessage());
+            this.console.println("The row and column must be a number. " + e.getMessage());
             return false;
         }
         Player player = OregonTrail.getPlayer();
@@ -43,8 +42,7 @@ public class MoveActorView extends View {
                           "Error reading input:" + e.getMessage());
             return false;
         }
-        ErrorView.display(this.getClass().getName(),
-                          "Scene Information");
+        this.console.println("Scene Information");
         
         return true;
     }
@@ -59,6 +57,6 @@ public class MoveActorView extends View {
 
     @Override
     public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 }
