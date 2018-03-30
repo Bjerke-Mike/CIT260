@@ -30,7 +30,8 @@ public class MoveActorView extends View {
             row = Integer.parseInt(inputs[0]);
             column = Integer.parseInt(inputs[1]);
         } catch (NumberFormatException e){
-            System.out.println("The row and column must be a number");
+            ErrorView.display(this.getClass().getName(),
+                          "The row and column must be a number." + e.getMessage());
             return false;
         }
         Player player = OregonTrail.getPlayer();
@@ -39,9 +40,12 @@ public class MoveActorView extends View {
             Location newLocation = MapControl.moveActor(player, row, column);
         } catch (MapControlException e) {
             System.out.println(e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                          "Error reading input:" + e.getMessage());
             return false;
         }
-        System.out.println("Scene Information");
+        ErrorView.display(this.getClass().getName(),
+                          "Scene Information");
         
         return true;
     }
