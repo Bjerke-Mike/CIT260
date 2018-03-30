@@ -37,12 +37,14 @@ public class OregonTrail {
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
     
     public static void main(String[] args) {
         try {
             OregonTrail.inFile =
                     new BufferedReader(new InputStreamReader(System.in));
             OregonTrail.outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
             
             // create StartProgramView and start the program
             StartProgramView startProgramView = new StartProgramView();
@@ -59,6 +61,9 @@ public class OregonTrail {
                     OregonTrail.inFile.close();
                 if (OregonTrail.outFile != null)
                     OregonTrail.outFile.close();
+                if (logFile != null) {
+                    logFile.close();
+                }
             } catch (IOException e) {
                 System.out.println("Error closing the files");
                 return;
@@ -150,5 +155,15 @@ public class OregonTrail {
         OregonTrail.inFile = inFile;
     }
 
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
 
+    public static void setLogFile(PrintWriter logFile) {
+        OregonTrail.logFile = logFile;
+    }
+
+    public static PrintWriter getOutput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
