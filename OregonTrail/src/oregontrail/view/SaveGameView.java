@@ -13,15 +13,11 @@ import oregontrail.exceptions.GameControlException;
  *
  * @author mellissah.
  */
+
 public class SaveGameView extends View {
 
         public SaveGameView() {
-        super("\n"
-              + "\n\t-----------------------------------------"
-              + "\n\t| Save Game                             |"
-              + "\n\t-----------------------------------------"
-              + "\n\t  Instructions on how to save the game  |"
-              + "\n\t-----------------------------------------");
+        super("\n\t  Enter the file path.");
     }
 
     
@@ -36,9 +32,9 @@ public class SaveGameView extends View {
         return inputs; 
     }
 */
-
-    private boolean doAction(String[] inputs) {
-        String filePath = inputs[0];
+    @Override
+    public boolean doAction(String inputs) {
+        String filePath = inputs;
         Game game = OregonTrail.getCurrentGame();
         try {
             GameControl.saveGame(game, filePath);
@@ -49,10 +45,5 @@ public class SaveGameView extends View {
         this.console.println("Game successfully saved");
         return true;
     }
-    
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+
 }
