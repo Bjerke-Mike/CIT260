@@ -5,6 +5,12 @@
  */
 package oregontrail;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.model.Actor;
 import oregontrail.model.Game;
 import oregontrail.model.Locations;
@@ -29,14 +35,36 @@ public class OregonTrail {
     private static Supplies items = null;
     private static Map map = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     public static void main(String[] args) {
         try {
+            OregonTrail.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            OregonTrail.outFile = new PrintWriter(System.out, true);
+            
+            // create StartProgramView and start the program
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
-        } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
+            return;
+        } catch (Throwable e) {
+            System.out.println("Exception: " + e.toString() +
+                               "\nCause: " + e.getCause() +
+                               "\nMessage: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (OregonTrail.inFile != null)
+                    OregonTrail.inFile.close();
+                if (OregonTrail.outFile != null)
+                    OregonTrail.outFile.close();
+            } catch (IOException e) {
+                System.out.println("Error closing the files");
+                return;
+            }
+            
+            
         }
         
         
@@ -55,6 +83,14 @@ public class OregonTrail {
         System.out.println(ResourceScene.fort.getName() + " " + ResourceScene.fort.getDescription());
         System.out.println(playerOne.supplies.toString());
         */
+    }
+
+    public static Supplies getItems() {
+        return items;
+    }
+
+    public static void setItems(Supplies items) {
+        OregonTrail.items = items;
     }
 
     public static Player getPlayer() {
@@ -98,4 +134,21 @@ public class OregonTrail {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+        public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        OregonTrail.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        OregonTrail.inFile = inFile;
+    }
+
+
 }
