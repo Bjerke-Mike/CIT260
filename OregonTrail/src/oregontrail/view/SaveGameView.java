@@ -13,7 +13,7 @@ import oregontrail.exceptions.GameControlException;
  *
  * @author mellissah.
  */
-public abstract class SaveGameView extends View {
+public class SaveGameView extends View {
 
         public SaveGameView() {
         super("\n"
