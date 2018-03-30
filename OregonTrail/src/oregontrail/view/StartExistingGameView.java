@@ -5,13 +5,21 @@
  */
 package oregontrail.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
+
 /**
  *
  * @author mellissah.
  */
 public class StartExistingGameView {
+
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
+    
+ 
     public void displayStartExistingGameView() {
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayStartExistingGameView() called***");
+        this.console.println("*** displayStartExistingGameView() called***");
     }
 }
