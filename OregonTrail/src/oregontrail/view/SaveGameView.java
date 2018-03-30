@@ -4,14 +4,28 @@
  * and open the template in the editor.
  */
 package oregontrail.view;
+import oregontrail.model.Game;
+import oregontrail.OregonTrail;
+import oregontrail.control.GameControl;
+import oregontrail.exceptions.GameControlException;
 
 /**
  *
  * @author mellissah.
  */
-public class SaveGameView extends View {
+public abstract class SaveGameView extends View {
 
-    private String[] getInput() {
+        public SaveGameView() {
+        super("\n"
+              + "\n\t-----------------------------------------"
+              + "\n\t| Save Game                             |"
+              + "\n\t-----------------------------------------"
+              + "\n\t  Instructions on how to save the game  |"
+              + "\n\t-----------------------------------------");
+    }
+
+    
+/*    private String getInput() {
         String[] inputs = new String[1]; //array one element long
         
         
@@ -21,18 +35,18 @@ public class SaveGameView extends View {
         save a reference to input1 in the inputs array
         return inputs; 
     }
-    
+*/
+
     private boolean doAction(String[] inputs) {
-        filePath = get first value in inputs array
-        game = get the currentGame in the main class
-        try
-        call the saveGame(game)control method
-        catch GameControlException
-        Print error passed with the exception
-        return false to repeat the view
-        endTry
-        Print a success message indicating where the
-        file was saved
+        String filePath = inputs[0];
+        Game game = OregonTrail.getCurrentGame();
+        try {
+            GameControl.saveGame(game, filePath);
+        } catch (GameControlException e) {
+                this.console.println(e.getMessage());
+                return false;
+        }
+        this.console.println("Game successfully saved");
         return true;
     }
     
