@@ -39,7 +39,6 @@ public class MoveActorView extends View {
         try {
             Location newLocation = MapControl.moveActor(player, row, column);
         } catch (MapControlException e) {
-            System.out.println(e.getMessage());
             ErrorView.display(this.getClass().getName(),
                           "Error reading input:" + e.getMessage());
             return false;
