@@ -5,7 +5,10 @@
  */
 package oregontrail.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
     
     public View() {
     }
@@ -33,26 +39,30 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
        
-       Scanner keyboard = new Scanner(System.in);
-       boolean valid = false;
-       String value = null;
-       // int test = 1 / (2 - 2);
-       // while a valid name has not been retrieved
-       while (!valid) {
+        boolean valid = false;
+        String selection = null;
+        // int test = 1 / (2 - 2);
+        
+        try {
+            // while a valid name has not been retrieved
+            while (!valid) {
             
-            // prompt for the player's name
-            System.out.println("\n" + this.displayMessage);
+                // prompt for the player's name
+                System.out.println("\n" + this.displayMessage);
             
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-            /*if (value.length() < 1) {
-                System.out.println("You must enter a non-blank value.");
-                continue;
-            }*/
-            break;
+                // get the value entered from the keyboard
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+                if (selection.length() < 1) {
+                    System.out.println("You must enter a non-blank value.");
+                    continue; 
+                }
+                break;
+            }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
-        return value; // return the name
+        return selection; // return the name
     }
 
     // converts the input string to just the capital first character
