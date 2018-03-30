@@ -54,7 +54,8 @@ public class GameMenuView extends View {
             case 'Q':
                 return true;
             default: 
-                System.out.println("Invalid menu item.");
+                ErrorView.display(this.getClass().getName(),
+                                  "Invalid menu item");
         }
         return false; 
     }
@@ -63,28 +64,34 @@ public class GameMenuView extends View {
         HuntingView startHunting = new HuntingView();
         int foodReceived;
         foodReceived = startHunting.displayHuntingView();
-        System.out.println("You received " + foodReceived + " food.");
+        ErrorView.display(this.getClass().getName(),
+                          "You received " + foodReceived + " food.");
     }
     private void displayMap(){
         
         Game game = new Game();
         game = OregonTrail.getCurrentGame();
         
-        System.out.println("Trail Map Information");
+        ErrorView.display(this.getClass().getName(),
+                          "Trail Map Information");
         
     } 
     private void displayMove(){
-        System.out.println("*** displayMove() called***");
+        ErrorView.display(this.getClass().getName(),
+                          "*** displayMove() called***");
     }
     private void displayInventory(){
-        System.out.println("*** displayInventory() called***");
+        ErrorView.display(this.getClass().getName(),
+                          "*** displayInventory() called***");
     }
     private void displayHelp(){
-        System.out.println("*** displayHelp() called***");
+        ErrorView.display(this.getClass().getName(),
+                          "*** displayHelp() called***");
     }
     
      private void displayStrength(){
-        System.out.println("*** displayStrength() called***");
+        ErrorView.display(this.getClass().getName(),
+                          "*** displayStrength() called***");
     }
   
 }
