@@ -39,28 +39,29 @@ public class MainMenuView extends View {
         boolean endView = false;
         
         inputChar = getInputChar(value);
-        
-        switch (inputChar) {
-            case 'N': 
-            try {
-                startNewGame();
-            } catch (GameControlException e) {
-                this.console.println(e.getMessage());
+        while (!endView) {
+            switch (inputChar) {
+                case 'N': 
+                try {
+                    startNewGame();
+                } catch (GameControlException e) {
+                    this.console.println(e.getMessage());
+                }
+                   return true;
+                case 'R':
+                   restartGame();
+                   break;
+                case 'G':
+                    this.saveGame();
+                    break;
+                case 'H':
+                    getHelp();
+                    break;
+                case 'E':
+                    return true;
+                default: 
+                    this.console.println("Invalid menu item.");
             }
-               return true;
-            case 'R':
-               restartGame();
-               break;
-            case 'G':
-                this.saveGame();
-                break;
-            case 'H':
-                getHelp();
-                break;
-            case 'E':
-                return true;
-            default: 
-                this.console.println("Invalid menu item.");
         }
         return false; 
     }
