@@ -59,7 +59,6 @@ public class HuntingView {
     }
 
     private void displayBanner(){
-        System.out.println("\n\tYou go hunting.");
         ErrorView.display(this.getClass().getName(),
                           "\n\tYou go hunting.");
     }
