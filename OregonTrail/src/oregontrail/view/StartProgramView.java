@@ -43,7 +43,6 @@ public class StartProgramView extends View {
             try {
                 Player player = GameControl.savePlayer(playersName);
             } catch (GameControlException e) {
-                System.out.println(e.getMessage());
                 ErrorView.display(this.getClass().getName(),
                           "Error reading input: " + e.getMessage());
                 return false;
