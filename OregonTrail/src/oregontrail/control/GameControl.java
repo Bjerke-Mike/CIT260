@@ -5,6 +5,8 @@
  */
 package oregontrail.control;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import oregontrail.OregonTrail;
 import static oregontrail.control.MapControl.createMap;
 import oregontrail.exceptions.GameControlException;
@@ -18,7 +20,10 @@ import oregontrail.model.Supplies;
  * @author mellissah.
  */
 public class GameControl {
-    
+
+    protected static final BufferedReader keyboard = OregonTrail.getInFile();
+    protected static final PrintWriter console = OregonTrail.getOutFile();
+
     public static Player savePlayer(String name) throws GameControlException {
         
         if (name == null | name.length() < 1) {
@@ -65,6 +70,10 @@ public class GameControl {
         return items;
        
         //Save the list of items in the game 
+    }
+
+    public static void saveGame(Game game) {
+        GameControl.console.println("saveGame game function called.");
     }
 
 }
