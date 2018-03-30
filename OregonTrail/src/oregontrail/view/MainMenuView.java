@@ -62,9 +62,12 @@ public class MainMenuView extends View {
     }
     
     private void startNewGame() throws GameControlException {
-       GameControl.createNewGame(OregonTrail.getPlayer());   
-       GameMenuView gameMenuView = new GameMenuView();
-       gameMenuView.display(); 
+        GameControl.createNewGame(OregonTrail.getPlayer());   
+        GameMenuView gameMenuView = new GameMenuView();
+        boolean valid = false;
+        while (!valid){
+            valid = gameMenuView.display();
+        }
     }
     
     private void restartGame() {
