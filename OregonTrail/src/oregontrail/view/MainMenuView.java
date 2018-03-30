@@ -74,7 +74,8 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-       this.console.println("*** Save Game function called. ***");
+       SaveGameView saveGameView = new SaveGameView();
+       saveGameView.display();
     }
     
     private void restartGame() {
