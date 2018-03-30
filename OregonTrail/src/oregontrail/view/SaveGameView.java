@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package oregontrail.view;
+import java.io.IOException;
 import oregontrail.model.Game;
 import oregontrail.OregonTrail;
 import oregontrail.control.GameControl;
@@ -39,8 +40,11 @@ public class SaveGameView extends View {
         try {
             GameControl.saveGame(game, filePath);
         } catch (GameControlException e) {
-                this.console.println(e.getMessage());
-                return false;
+            this.console.println(e.getMessage());
+            return false;
+        } catch (IOException e) {
+            this.console.println("I/O Error: " + e.getMessage());
+            return false;
         }
         this.console.println("Game successfully saved");
         return true;
