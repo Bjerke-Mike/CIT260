@@ -72,8 +72,9 @@ public class GameControl {
         //Save the list of items in the game 
     }
 
-    public static void saveGame(Game game) {
-        GameControl.console.println("saveGame game function called.");
+    public static void saveGame(Game game, String filePath)
+                                throws GameControlException{
+        GameControl.console.println("saveGame() in GameControl class");
     }
 
 }
