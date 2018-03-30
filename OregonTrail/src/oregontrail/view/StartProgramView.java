@@ -27,8 +27,9 @@ public class StartProgramView extends View {
        
         boolean endOfView = false;
         if (inputs == null || inputs.length() < 1) {
-            System.out.println("Could not create the player. " +
-                               "Enter a different name.");
+            ErrorView.display(this.getClass().getName(),
+                          "Could not create the player. " +
+                          "Enter a different name.");
             return false;
         }
         else if (inputs.length() == 1 &&
@@ -43,13 +44,16 @@ public class StartProgramView extends View {
                 Player player = GameControl.savePlayer(playersName);
             } catch (GameControlException e) {
                 System.out.println(e.getMessage());
+                ErrorView.display(this.getClass().getName(),
+                          "Error reading input: " + e.getMessage());
                 return false;
             }
         }
-        System.out.println("================================================="
-                         + "\nWelcome to the game " + playersName
-                         + "\nWe hope you have a lot of fun!"
-                         + "\n=================================================");
+        ErrorView.display(this.getClass().getName(),
+                          "\"=================================================\"\n" +
+"                         + \"\\nWelcome to the game \" + playersName\n" +
+"                         + \"\\nWe hope you have a lot of fun!\"\n" +
+"                         + \"\\n=================================================");
         boolean mainMenuCheck;
         mainMenuCheck = false;
         while (!mainMenuCheck){
@@ -60,7 +64,8 @@ public class StartProgramView extends View {
     }
     
     private void displayBanner() {
-        System.out.println("Welcome to the Oregon Trail.\nWould you like instructions? (Y/N)");
+        ErrorView.display(this.getClass().getName(),
+                          "Welcome to the Oregon Trail. \nWould you like instructions? (Y/N)");
     }
 
 }
