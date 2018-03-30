@@ -6,7 +6,13 @@
 package oregontrail.control;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 import static oregontrail.control.MapControl.createMap;
 import oregontrail.exceptions.GameControlException;
@@ -74,7 +80,17 @@ public class GameControl {
 
     public static void saveGame(Game game, String filePath)
                                 throws GameControlException{
-        GameControl.console.println("saveGame() in GameControl class");
-    }
-
+        if (game == null)
+            throw new GameControlException("Can't save: Invalid Game");
+        if (filePath == null || filePath.length()<1)
+            throw new GameControlException("Can't save: Invalid File Path");
+        
+        try (ObjectOutputStream out = 
+                new ObjectOutputStream(new FileOutputStream(filePath))){
+            out.writeObject(game);
+            GameControl.console.println("saveGame() in GameControl class");
+        }   catch (IOException ex) {
+            System.out.println("I/O error: " + ex.getMessage());
+        }
+   }
 }
