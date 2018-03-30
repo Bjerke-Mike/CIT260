@@ -11,6 +11,7 @@ package oregontrail.view;
  */
 public class StartExistingGameView {
     public void displayStartExistingGameView() {
-        System.out.println("*** displayStartExistingGameView() called***");
+        ErrorView.display(this.getClass().getName(),
+                          "*** displayStartExistingGameView() called***");
     }
 }
