@@ -43,13 +43,11 @@ public class StartProgramView extends View {
             try {
                 Player player = GameControl.savePlayer(playersName);
             } catch (GameControlException e) {
-                ErrorView.display(this.getClass().getName(),
-                          "Error reading input: " + e.getMessage());
+                this.console.println("Error reading input: ");
                 return false;
             }
         }
-        ErrorView.display(this.getClass().getName(),
-                          "\"=================================================\"\n" +
+        this.console.println("\"=================================================\"\n" +
 "                         + \"\\nWelcome to the game \" + playersName\n" +
 "                         + \"\\nWe hope you have a lot of fun!\"\n" +
 "                         + \"\\n=================================================");
@@ -63,8 +61,7 @@ public class StartProgramView extends View {
     }
     
     private void displayBanner() {
-        ErrorView.display(this.getClass().getName(),
-                          "Welcome to the Oregon Trail. \nWould you like instructions? (Y/N)");
+        this.console.println("Welcome to the Oregon Trail. \nWould you like instructions? (Y/N)");
     }
 
 }
