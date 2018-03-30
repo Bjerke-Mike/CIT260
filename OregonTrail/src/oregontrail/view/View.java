@@ -48,14 +48,14 @@ public abstract class View implements ViewInterface {
             while (!valid) {
             
                 // prompt for the player's name
-                ErrorView.display(this.getClass().getName(),
-                          "\n" + this.displayMessage);
+               this.console.println("\n" + this.displayMessage);
             
                 // get the value entered from the keyboard
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
                 if (selection.length() < 1) {
-                    this.console.println("You must enter a non-blank value.");
+                    ErrorView.display(this.getClass().getName(),
+                            "You must enter a non-blank value.");
                     continue; 
                 }
                 break;
@@ -63,7 +63,6 @@ public abstract class View implements ViewInterface {
         } catch (Exception e) {
             ErrorView.display(this.getClass().getName(),
                           "Error reading input: " + e.getMessage());
-            return null;
         }
         return selection; // return the name
     }
