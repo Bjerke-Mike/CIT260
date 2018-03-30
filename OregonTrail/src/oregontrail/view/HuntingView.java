@@ -5,7 +5,10 @@
  */
 package oregontrail.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -14,6 +17,8 @@ import java.util.Scanner;
 public class HuntingView {
     private static int wordCount = -1;
     private static String[] wordName = {"bang", "shoot", "blam", "pow"};
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
     
     public int displayHuntingView() {
         wordCount++;
@@ -33,34 +38,29 @@ public class HuntingView {
         totalTime = System.currentTimeMillis() - startTime;
         if (huntingSuccess) {
             if (totalTime <= 2000) { // aprox 2 seconds 100 to 200 food
-                ErrorView.display(this.getClass().getName(),
-                          "You got a big one! \nThere will be plentry of food tonight!");
+                this.console.println("You got a big one! \nThere will be plentry of food tonight!");
                 if (totalTime < 1000)
                     return 200; // if you get it in less than 1 second, you get max food.
                 // otherwise, you lose 1 food for each .01 second longer than that.
                 return (200 - ((int) (totalTime - 1000) /10));
             }
             else if (totalTime <= 4000) { // aprox 4 seconds, 50 to 100 food
-                ErrorView.display(this.getClass().getName(),
-                          "You got a medium one. \nThis won't last very long.");
+                this.console.println("You got a medium one. \nThis won't last very long.");
                 return (100 - ((int) (totalTime - 2000) / 40));
             }
             else if (totalTime <= 6000) { // aprox 6 seconds, 25 to 50 food.
-                ErrorView.display(this.getClass().getName(),
-                          "You got a small one. \nYou will need to go hunting again soon.");
+                this.console.println("You got a small one. \nYou will need to go hunting again soon.");
                 return (50 - ((int) (totalTime - 4000) / 80));
             }
         }
         // Longer than 6 seconds or mistyped "bang"
-        ErrorView.display(this.getClass().getName(),
-                          "You missed it!"
+        this.console.println("You missed it!"
                            + "\nI hope you have food in your wagon or you may starve.");
         return 0;
     }
 
     private void displayBanner(){
-        ErrorView.display(this.getClass().getName(),
-                          "\n\tYou go hunting.");
+        this.console.println("\n\tYou go hunting.");
     }
     
 }
