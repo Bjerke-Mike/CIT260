@@ -48,31 +48,25 @@ public class HelpMenuView extends View {
             case 'Q':
                 return true;
             default: 
-                ErrorView.display(this.getClass().getName(),
-                          "Invalid menu item.");
+                this.console.println("Invalid menu item.");
         }
         return false; 
     }
 
     private void displayGoal(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayGoal() called***");
+        this.console.println("*** displayGoal() called***");
     } 
     private void displayMove(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayMove() called***");
+        this.console.println("*** displayMove() called***");
     }
     private void displayEstimate(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayEstimate() called***");
+        this.console.println("*** displayEstimate() called***");
     }
     private void displayHarvest(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayHarvest() called***");
+        this.console.println("*** displayHarvest() called***");
     }
     private void displayDelivery(){
-        ErrorView.display(this.getClass().getName(),
-                          "*** displayDelivery() called***");
+        this.console.println("*** displayDelivery() called***");
     }
  
 }
