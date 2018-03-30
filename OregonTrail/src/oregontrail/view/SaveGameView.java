@@ -21,7 +21,7 @@ public class SaveGameView extends View {
     }
 
     
-/*    private String getInput() {
+/*    private String getInputs() {
         String[] inputs = new String[1]; //array one element long
         
         
