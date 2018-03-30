@@ -13,8 +13,8 @@ import oregontrail.OregonTrail;
  * @author mellissah.
  */
 public class ErrorView {
-    public static PrintWriter console = OregonTrail.getOutput();
-    public static PrintWriter log = OregonTrail.getLogFile();
+    private static PrintWriter console = OregonTrail.getOutput();
+    private static PrintWriter log = OregonTrail.getLogFile();
     
     public static void display(String className, String errorMessage) {
         console.println(
