@@ -86,10 +86,15 @@ public class GameMenuView extends View {
         try {
             ShoppingControlView shoppingView = new
                 ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
+            boolean exitShoppingMenu = false;
+            while(!exitShoppingMenu) {
+                exitShoppingMenu = shoppingView.display();
+            }
         } catch (ShoppingControlException e) {
             ErrorView.display(this.getClass().getName(),
                 "Shopping Control Error: " + e);
         }
+            
 
         //this.console.println("*** displayShopping() called ***");
     }
