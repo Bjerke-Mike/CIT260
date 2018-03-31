@@ -92,7 +92,7 @@ public class GameMenuView extends View {
     }
 
     private void displayShopping() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("*** displayShopping() called ***");
     }
   
 }
