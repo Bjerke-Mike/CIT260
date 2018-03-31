@@ -18,7 +18,7 @@ import oregontrail.exceptions.GameControlException;
 public class SaveGameView extends View {
 
         public SaveGameView() {
-        super("\n\t  Enter the file path.");
+        super("\n\t  Enter the file name.");
     }
 
     
