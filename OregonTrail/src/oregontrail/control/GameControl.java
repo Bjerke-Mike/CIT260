@@ -6,8 +6,10 @@
 package oregontrail.control;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -83,7 +85,7 @@ public class GameControl {
         if (game == null)
             throw new GameControlException("Can't save: Invalid Game");
         if (filePath == null || filePath.length()<1)
-            throw new GameControlException("Can't save: Invalid File Path");
+            throw new GameControlException("Can't save: Invalid File Name");
         
         try (ObjectOutputStream out = 
                 new ObjectOutputStream(new FileOutputStream(filePath))){
@@ -94,12 +96,23 @@ public class GameControl {
         }
     }
 
-    public static Game getGame(String value)
+    public static Game getGame(String filePath)
                                throws GameControlException, IOException {
-
+        if (filePath == null || filePath.length()<1)
+            throw new GameControlException("Can't load: Invalid File Name");
         Game game = new Game();
-        
-        System.out.println("*** GameControl getGame() called ***");
+        try (ObjectInputStream objectInput
+                    = new ObjectInputStream(new FileInputStream(filePath))){
+            game = (Game) objectInput.readObject();
+            // GameControl.console.println("loadGame() in GameControl class");
+        } catch (IOException ex) {
+            System.out.println("I/O error: " + ex.getMessage());
+            return null;
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Class Not Found error: " + ex.getMessage());
+            return null;
+        }
+        // System.out.println("*** GameControl getGame() called ***");
         
         return game;
     }
