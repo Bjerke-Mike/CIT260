@@ -8,8 +8,10 @@ package oregontrail.view;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import oregontrail.OregonTrail;
 import oregontrail.control.GameControl;
 import oregontrail.exceptions.GameControlException;
+import oregontrail.model.Game;
 import oregontrail.model.Player;
 
 /**
@@ -25,6 +27,11 @@ public class StartProgramView extends View {
     
     public boolean doAction(String inputs) {
        
+        Game game = OregonTrail.getCurrentGame();
+        if (game == null) {  // game is blank, set to default values
+            game = new Game();
+            OregonTrail.setCurrentGame(game);
+        }
         boolean endOfView = false;
         if (inputs == null || inputs.length() < 1) {
             ErrorView.display(this.getClass().getName(),
