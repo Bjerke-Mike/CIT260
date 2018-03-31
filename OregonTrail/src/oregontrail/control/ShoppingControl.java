@@ -23,7 +23,7 @@ public class ShoppingControl {
         { 1.00, 1.20, 1.40, 1.50, 1.60, 1.70, 1.50}   // Misc Supplies prices
     };
 
-    public String[] getLocationNames() {
+    public String[] getLocationName() {
         return locationName;
     }
 
@@ -34,7 +34,7 @@ public class ShoppingControl {
         return locationName[locationNumber];
     }
     
-    public void setLocationNames(String[] locationName) {
+    public void setLocationName(String[] locationName) {
         this.locationName = locationName;
     }
 
