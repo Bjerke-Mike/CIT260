@@ -5,7 +5,11 @@
  */
 package oregontrail.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
+import oregontrail.control.ShoppingControl;
+import oregontrail.exceptions.ShoppingControlException;
 import oregontrail.model.Game;
 
 /**
@@ -63,25 +67,38 @@ public class GameMenuView extends View {
         return false; 
     }
 
+    private void displayMap(){
+        Game game = new Game();
+        game = OregonTrail.getCurrentGame();
+        
+        this.console.println("*** Trail Map Information ***");
+    } 
+    private void displayMove(){
+        this.console.println("*** displayMove() called ***");
+    }
+
+    private void displayInventory(){
+        this.console.println("*** displayInventory() called ***");
+    }
+
+    private void displayShopping() {
+        ShoppingControl shopping = new ShoppingControl();
+        try {
+            ShoppingControlView shoppingView = new
+                ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
+        } catch (ShoppingControlException e) {
+            ErrorView.display(this.getClass().getName(),
+                "Shopping Control Error: " + e);
+        }
+
+        //this.console.println("*** displayShopping() called ***");
+    }
+  
     private void goHunting() {
         HuntingView startHunting = new HuntingView();
         int foodReceived;
         foodReceived = startHunting.displayHuntingView();
         this.console.println("You received " + foodReceived + " food.");
-    }
-    private void displayMap(){
-        
-        Game game = new Game();
-        game = OregonTrail.getCurrentGame();
-        
-        this.console.println("Trail Map Information");
-        
-    } 
-    private void displayMove(){
-        this.console.println("*** displayMove() called ***");
-    }
-    private void displayInventory(){
-        this.console.println("*** displayInventory() called ***");
     }
     private void displayHelp(){
         this.console.println("*** displayHelp() called ***");
@@ -91,8 +108,4 @@ public class GameMenuView extends View {
         this.console.println("*** displayStrength() called ***");
     }
 
-    private void displayShopping() {
-        this.console.println("*** displayShopping() called ***");
-    }
-  
 }
