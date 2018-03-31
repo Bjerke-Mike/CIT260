@@ -74,17 +74,17 @@ public class GameMenuView extends View {
         
     } 
     private void displayMove(){
-        this.console.println("*** displayMove() called***");
+        this.console.println("*** displayMove() called ***");
     }
     private void displayInventory(){
-        this.console.println("*** displayInventory() called***");
+        this.console.println("*** displayInventory() called ***");
     }
     private void displayHelp(){
-        this.console.println("*** displayHelp() called***");
+        this.console.println("*** displayHelp() called ***");
     }
     
      private void displayStrength(){
-        this.console.println("*** displayStrength() called***");
+        this.console.println("*** displayStrength() called ***");
     }
   
 }
