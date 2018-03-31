@@ -44,7 +44,7 @@ public class ShoppingControlView extends View {
             case 'P':
                 this.showPrices();
                 break;
-            case 'L':
+            case 'S':
                 this.savePrices();
                 break;
             case 'H':
