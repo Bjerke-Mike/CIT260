@@ -83,8 +83,8 @@ public class MainMenuView extends View {
     }
     
     private void restartGame() {
-       StartExistingGameView startExistingGameView = new StartExistingGameView();
-       startExistingGameView.displayStartExistingGameView();
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        startExistingGameView.displayStartExistingGameView();
     }
     
     private void getHelp() {
@@ -97,7 +97,9 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        this.console.println("*** loadGame() called ***");
+        LoadGameView loadGameView = new LoadGameView();
+        loadGameView.display();
+        // this.console.println("*** loadGame() called ***");
     }
 
 }
