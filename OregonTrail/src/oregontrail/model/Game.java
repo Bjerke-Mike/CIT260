@@ -17,8 +17,8 @@ public class Game implements Serializable {
     // class variables
     private int gameDate;
     private int mileage;
-    public Map map = new Map();
-    public PlayerData playerData = new PlayerData();
+    private Map map;
+    private PlayerData playerData;
 
     public int getGameDate() {
         return gameDate;
@@ -27,6 +27,8 @@ public class Game implements Serializable {
     public Game() {
         gameDate = 0;
         mileage = 0;
+        map = new Map();
+        playerData = new PlayerData();
     }
 
     public void setGameDate(int gameDate) {
@@ -39,6 +41,22 @@ public class Game implements Serializable {
 
     public void setMileage(int mileage) {
         this.mileage = mileage;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public PlayerData getPlayerData() {
+        return playerData;
+    }
+
+    public void setPlayerData(PlayerData playerData) {
+        this.playerData = playerData;
     }
 
     @Override
