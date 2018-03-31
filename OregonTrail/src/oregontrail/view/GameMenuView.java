@@ -17,9 +17,10 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super("\n\tV - View Map\n" +
               "\tI - View list of items in inventory.\n" +
+              "\tS - Shop at the local trader" +
               "\tM - Move on down the trail.\n" +
               "\tF - Hunt for food.\n" +
-              "\tS - Get average health strength.\n" +
+              "\tG - Get average health strength.\n" +
               "\tH - Help\n" +
               "\tQ - Quit");
     }
@@ -39,13 +40,16 @@ public class GameMenuView extends View {
             case 'I':
                displayInventory();
                break;
+            case 'S':
+               displayShopping();
+               break;
             case 'M':
                 displayMove();
                 break;
             case 'F':
                 goHunting();
                 break;
-            case 'S':
+            case 'G':
                 displayStrength();
                 break;
             case 'H':
@@ -85,6 +89,10 @@ public class GameMenuView extends View {
     
      private void displayStrength(){
         this.console.println("*** displayStrength() called ***");
+    }
+
+    private void displayShopping() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }
