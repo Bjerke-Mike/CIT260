@@ -54,10 +54,10 @@ public class StartProgramView extends View {
                 return false;
             }
         }
-        this.console.println("\"=================================================\"\n" +
-"                         + \"\\nWelcome to the game \" + playersName\n" +
-"                         + \"\\nWe hope you have a lot of fun!\"\n" +
-"                         + \"\\n=================================================");
+        this.console.println("\n\t=================================================\n" +
+                         "\t\tWelcome to the game " + playersName + "!\n" +
+                         "\t\tWe hope you have a lot of fun!\n" +
+                         "\t=================================================");
         boolean mainMenuCheck;
         mainMenuCheck = false;
         MainMenuView mainMenuView = new MainMenuView();
