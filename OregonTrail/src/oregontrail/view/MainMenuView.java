@@ -25,7 +25,8 @@ public class MainMenuView extends View {
               + "\n\t-----------------------------------------"
               + "\n\t  N - Start new game"
               + "\n\t  R - Restart existing game"
-              + "\n\t  G - Save the game"
+              + "\n\t  S - Save the game"
+              + "\n\t  L - Load a saved game"
               + "\n\t  H - Get help on how to play the game"
               + "\n\t  E - Exit"
               + "\n\t-----------------------------------------");
@@ -50,8 +51,11 @@ public class MainMenuView extends View {
             case 'R':
                restartGame();
                break;
-            case 'G':
+            case 'S':
                 this.saveGame();
+                break;
+            case 'L':
+                this.loadGame();
                 break;
             case 'H':
                 getHelp();
@@ -90,6 +94,10 @@ public class MainMenuView extends View {
         while(!exitHelpMenu) {
             exitHelpMenu = helpMenuView.display();
         }
+    }
+
+    private void loadGame() {
+        this.console.println("*** loadGame() called ***");
     }
 
 }
