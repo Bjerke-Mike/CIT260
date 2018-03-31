@@ -13,14 +13,14 @@ import oregontrail.exceptions.ShoppingControlException;
  */
 public class ShoppingControl {
         
-    String[] locationName = { "Independence", "Fort 1", "Fort 2", "Fort 3",
-                               "Fort 4", "Fort 5"};
+    String[] locationName = { "Independence", "Fort Kearney", "Laramie",
+             "Fort Bridger", "Fort Hall", "Fort Boise", "Fort Walla Walla"};
     String[] itemNames = { "Food", "Ammo", "Clothing", "Misc" };
     double[][] prices = {
-        { 0.40, 0.50, 0.60, 0.70, 0.80, 0.90},  // Food prices
-        { 0.75, 0.80, 0.85, 0.90, 1.00, 1.20},  // Ammo Prices
-        { 1.20, 1.30, 1.50, 1.40, 1.50, 1.30},  // Clothing Prices
-        { 1.00, 1.20, 1.40, 1.50, 1.60, 1.70}   // Misc Supplies prices
+        { 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.80},  // Food prices
+        { 0.75, 0.80, 0.85, 0.90, 1.00, 1.20, 1.10},  // Ammo Prices
+        { 1.20, 1.30, 1.50, 1.40, 1.50, 1.30, 1.40},  // Clothing Prices
+        { 1.00, 1.20, 1.40, 1.50, 1.60, 1.70, 1.50}   // Misc Supplies prices
     };
 
     public String[] getLocationNames() {
