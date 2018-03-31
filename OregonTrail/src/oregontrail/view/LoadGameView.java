@@ -33,8 +33,8 @@ public class LoadGameView extends View {
             this.console.println("I/O Error: " + e.getMessage());
             return false;
         }
-        this.console.println("Game successfully saved");
-        
+        this.console.println("Game successfully loaded");
+        OregonTrail.setCurrentGame(game);
         
         return true;
     }
