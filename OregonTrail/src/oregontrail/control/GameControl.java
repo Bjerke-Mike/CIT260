@@ -92,5 +92,14 @@ public class GameControl {
         }   catch (IOException ex) {
             System.out.println("I/O error: " + ex.getMessage());
         }
-   }
+    }
+
+    public static void getGame(Game game, String value)
+                               throws GameControlException, IOException {
+
+        System.out.println("*** GameControl getGame() called ***");
+
+    }
+    
+    
 }
