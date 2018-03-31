@@ -28,7 +28,7 @@ public class MainMenuView extends View {
               + "\n\t  S - Save the game"
               + "\n\t  L - Load a saved game"
               + "\n\t  H - Get help on how to play the game"
-              + "\n\t  E - Exit"
+              + "\n\t  E - Exit Oregon Trail"
               + "\n\t-----------------------------------------");
     }
     
