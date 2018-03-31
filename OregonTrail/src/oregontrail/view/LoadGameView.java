@@ -23,9 +23,9 @@ public class LoadGameView extends View {
 
     @Override
     public boolean doAction(String value) {
-        Game game = OregonTrail.getCurrentGame();
+        Game game = null;
         try {
-            GameControl.getGame(game, value);
+            game = GameControl.getGame(value);
         } catch (GameControlException e) {
             this.console.println(e.getMessage());
             return false;
