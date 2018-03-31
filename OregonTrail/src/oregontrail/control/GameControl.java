@@ -79,7 +79,7 @@ public class GameControl {
     }
 
     public static void saveGame(Game game, String filePath)
-                                throws GameControlException, IOException{
+                                throws GameControlException, IOException {
         if (game == null)
             throw new GameControlException("Can't save: Invalid Game");
         if (filePath == null || filePath.length()<1)
