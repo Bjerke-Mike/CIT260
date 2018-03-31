@@ -17,12 +17,12 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super("\n\tV - View Map\n" +
               "\tI - View list of items in inventory.\n" +
-              "\tS - Shop at the local trader" +
+              "\tS - Shop at the local trader\n" +
               "\tM - Move on down the trail.\n" +
               "\tF - Hunt for food.\n" +
               "\tG - Get average health strength.\n" +
-              "\tH - Help\n" +
-              "\tQ - Quit");
+              "\tH - Help on the View menu.\n" +
+              "\tQ - Quit to main menu.");
     }
     
     @Override
