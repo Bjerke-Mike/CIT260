@@ -54,8 +54,7 @@ public abstract class View implements ViewInterface {
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
                 if (selection.length() < 1) {
-                    ErrorView.display(this.getClass().getName(),
-                            "You must enter a non-blank value.");
+                    this.console.println("You must enter a non-blank value.");
                     continue; 
                 }
                 break;
