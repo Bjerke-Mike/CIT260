@@ -94,11 +94,14 @@ public class GameControl {
         }
     }
 
-    public static void getGame(Game game, String value)
+    public static Game getGame(String value)
                                throws GameControlException, IOException {
 
+        Game game = new Game();
+        
         System.out.println("*** GameControl getGame() called ***");
-
+        
+        return game;
     }
     
     
