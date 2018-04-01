@@ -5,6 +5,11 @@
  */
 package oregontrail.control;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
 import oregontrail.exceptions.ShoppingControlException;
 
 /**
@@ -13,10 +18,10 @@ import oregontrail.exceptions.ShoppingControlException;
  */
 public class ShoppingControl {
         
-    String[] locationName = { "Independence", "Fort Kearney", "Laramie",
+    private String[] locationName = { "Independence", "Fort Kearney", "Laramie",
              "Fort Bridger", "Fort Hall", "Fort Boise", "Fort Walla Walla"};
-    String[] itemNames = { "Food", "Ammo", "Clothing", "Misc" };
-    double[][] prices = {
+    private String[] itemNames = { "Food", "Ammo", "Clothing", "Misc" };
+    private double[][] prices = {
         { 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.80},  // Food prices
         { 0.75, 0.80, 0.85, 0.90, 1.00, 1.20, 1.10},  // Ammo Prices
         { 1.20, 1.30, 1.50, 1.40, 1.50, 1.30, 1.40},  // Clothing Prices
@@ -78,5 +83,21 @@ public class ShoppingControl {
         
         return itemPrice;
     }
-   
+    
+    public static void saveReport(String filePath)
+                    throws ShoppingControlException, IOException {
+        if (filePath == null || filePath.length()<1)
+            throw new ShoppingControlException("Can't save: Invalid File Name");
+        ShoppingControl doShopping = new ShoppingControl();
+        String currentLocation = doShopping.getLocationName(OregonTrail.getLocationNum());
+        try (PrintWriter out = new PrintWriter(filePath)) {
+            out.println("\n          Shopping Report"); // 33
+            out.printf("%n%33s", currentLocation);
+            //out.printf("%n%-15s")
+            GameControl.console.println("saveGame() in GameControl class");
+        }   catch (IOException ex) {
+            System.out.println("I/O error: " + ex.getMessage());
+        }
+        
+    }
 }
