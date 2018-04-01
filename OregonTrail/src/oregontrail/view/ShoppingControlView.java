@@ -72,20 +72,19 @@ public class ShoppingControlView extends View {
         int locationNum = OregonTrail.getLocationNum();
         for (int i = 0; i< shopping.getLocationName().length; i++ ) {
             if (i == locationNum) {
-                locationMenu += (i + 1) + " - * " + shopping.getLocationName(i);
+                locationMenu += (i + 1) + " - * " + shopping.getLocationName(i) + "\n";
                 locationMenu += "    * Current location";
             }
             else {
                 locationMenu += (i + 1) + " -   " + shopping.getLocationName(i);
             }
+            if (i != (shopping.getLocationName().length - 1))
+                locationMenu += "\n";
         }
-        ShoppingControlView shoppingView = new
-                ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
-            boolean exitShoppingMenu = false;
-            while(!exitShoppingMenu) {
-                exitShoppingMenu = shoppingView.display();
-            
-        this.console.println("changeLocation() in Shopping Control View called.");
+        ChangeFort changeFort = new ChangeFort(locationMenu);
+            boolean exitChangeFort = false;
+            while(!exitChangeFort) {
+                exitChangeFort = changeFort.display();
         }
     }
 
