@@ -11,6 +11,11 @@ package oregontrail.view;
  */
 public class ChangeFort extends View {
 
+    ChangeFort(String locationMenu) {
+                super(locationMenu);
+
+    }
+
     @Override
     public boolean doAction(String value) {
         this.console.println("changeLocation() in Shopping Control View called.");
