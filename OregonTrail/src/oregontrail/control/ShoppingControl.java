@@ -60,7 +60,7 @@ public class ShoppingControl {
         return prices;
     }
     public double getPrices(int itemNum, int locationNum) {
-        return prices[itemNum][locationNum];
+        return prices[locationNum][itemNum];
     }
     
     public void setPrices(double[][] prices) {
@@ -104,9 +104,9 @@ public class ShoppingControl {
             out.printf("%n%21s", currentLocation);
             out.printf("%n%-14s%7s", "Item Name", "Price" );
             out.printf("%n%-14s%7s", "---------", "-----" );
-            for (int i = 0; i < doShopping.getLocationName().length; i++){
-                out.printf("%n%-14s%7.2f", doShopping.getItemNames(locationNum),
-                           doShopping.getPrices(i, locationNum));
+            for (int i = 0; i < doShopping.getItemNames().length; i++){
+                out.printf("%n%-14s%7.2f", doShopping.getItemNames(i),
+                           doShopping.getPrices(locationNum, i));
             }
             GameControl.console.println("saveGame() in GameControl class");
         }   catch (IOException e) {
