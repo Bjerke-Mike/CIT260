@@ -26,7 +26,7 @@ public class ShoppingControlView extends View {
               + "\n\t-----------------------------------------"
               + "\n\t  C - Change location"
               + "\n\t  P - Show prices"
-              + "\n\t  S - Save prices to a file"
+              + "\n\t  R - Report the prices to a file"
               + "\n\t  H - Get help on this menu"
               + "\n\t  E - Exit this menu."
               + "\n\t-----------------------------------------");
@@ -52,7 +52,7 @@ public class ShoppingControlView extends View {
             case 'P':
                 this.showPrices();
                 break;
-            case 'S':
+            case 'R':
                 this.savePrices();
                 break;
             case 'H':
@@ -94,6 +94,7 @@ public class ShoppingControlView extends View {
     }
 
     private void savePrices() {
+        
         this.console.println("savePrices() in Shopping Control View called.");
     }
 
