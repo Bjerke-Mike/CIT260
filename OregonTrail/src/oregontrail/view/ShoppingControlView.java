@@ -94,8 +94,9 @@ public class ShoppingControlView extends View {
     }
 
     private void savePrices() {
-        
-        this.console.println("savePrices() in Shopping Control View called.");
+        SaveShoppingReport doReport = new SaveShoppingReport();
+        doReport.display();
+        //this.console.println("savePrices() in Shopping Control View called.");
     }
 
     private void getShoppingHelp() {
