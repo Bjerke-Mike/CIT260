@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import oregontrail.OregonTrail;
 import oregontrail.exceptions.ShoppingControlException;
+import oregontrail.view.ErrorView;
 
 /**
  *
@@ -47,6 +48,10 @@ public class ShoppingControl {
         return itemNames;
     }
 
+    public String getItemNames(int locationNum) {
+        return itemNames[locationNum];
+    }
+
     public void setItemNames(String[] itemNames) {
         this.itemNames = itemNames;
     }
@@ -54,7 +59,10 @@ public class ShoppingControl {
     public double[][] getPrices() {
         return prices;
     }
-
+    public double getPrices(int itemNum, int locationNum) {
+        return prices[itemNum][locationNum];
+    }
+    
     public void setPrices(double[][] prices) {
         this.prices = prices;
     }
@@ -89,14 +97,21 @@ public class ShoppingControl {
         if (filePath == null || filePath.length()<1)
             throw new ShoppingControlException("Can't save: Invalid File Name");
         ShoppingControl doShopping = new ShoppingControl();
-        String currentLocation = doShopping.getLocationName(OregonTrail.getLocationNum());
+        int locationNum = OregonTrail.getLocationNum();
+        String currentLocation = doShopping.getLocationName(locationNum);
         try (PrintWriter out = new PrintWriter(filePath)) {
-            out.println("\n          Shopping Report"); // 33
-            out.printf("%n%33s", currentLocation);
-            //out.printf("%n%-15s")
+            out.printf("%n%21s", "Shopping Report");
+            out.printf("%n%21s", currentLocation);
+            out.printf("%n%-14s%7s", "Item Name", "Price" );
+            out.printf("%n%-14s%7s", "---------", "-----" );
+            for (int i = 0; i < doShopping.getLocationName().length; i++){
+                out.printf("%n%-14s%7.2f", doShopping.getItemNames(locationNum),
+                           doShopping.getPrices(i, locationNum));
+            }
             GameControl.console.println("saveGame() in GameControl class");
-        }   catch (IOException ex) {
-            System.out.println("I/O error: " + ex.getMessage());
+        }   catch (IOException e) {
+                    ErrorView.display(doShopping.getClass().getName(),
+                    "I/O Error: " + e);
         }
         
     }
