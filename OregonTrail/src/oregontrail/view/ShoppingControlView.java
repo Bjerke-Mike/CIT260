@@ -67,24 +67,25 @@ public class ShoppingControlView extends View {
     }
 
     private void changeLocation() throws ShoppingControlException {
-        String locationMenu = "Select one of the following locations:\n" +
-                              "--------------------------------------\n";
-        int locationNum = OregonTrail.getLocationNum();
-        for (int i = 0; i< shopping.getLocationName().length; i++ ) {
-            if (i == locationNum) {
-                locationMenu += (i + 1) + " - * " + shopping.getLocationName(i) + "\n";
-                locationMenu += "    * Current location";
+        boolean exitChangeFort = false;
+        int locationNum;
+        while(!exitChangeFort) {
+            String locationMenu = "Select one of the following locations:\n" +
+                                  "--------------------------------------\n";
+            locationNum = OregonTrail.getLocationNum();
+            for (int i = 0; i< shopping.getLocationName().length; i++ ) {
+                if (i == locationNum) {
+                    locationMenu += (i + 1) + " - * " + shopping.getLocationName(i) + "\n";
+                    locationMenu += "    * Current location";
+                }
+                else {
+                    locationMenu += (i + 1) + " -   " + shopping.getLocationName(i);
+                }
+                if (i != (shopping.getLocationName().length - 1))
+                    locationMenu += "\n";
             }
-            else {
-                locationMenu += (i + 1) + " -   " + shopping.getLocationName(i);
-            }
-            if (i != (shopping.getLocationName().length - 1))
-                locationMenu += "\n";
-        }
-        ChangeFort changeFort = new ChangeFort(locationMenu);
-            boolean exitChangeFort = false;
-            while(!exitChangeFort) {
-                exitChangeFort = changeFort.display();
+            ChangeFort changeFort = new ChangeFort(locationMenu);
+            exitChangeFort = changeFort.display();
         }
     }
 
