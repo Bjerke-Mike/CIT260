@@ -5,6 +5,8 @@
  */
 package oregontrail.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.control.ShoppingControl;
 import oregontrail.exceptions.ShoppingControlException;
 
@@ -39,7 +41,12 @@ public class ShoppingControlView extends View {
         
         switch (inputChar) {
             case 'C':
-               this.changeLocation();
+                try {
+                    this.changeLocation();
+                } catch (ShoppingControlException e) {
+                    ErrorView.display(this.getClass().getName(),
+                    "Shopping Control Error: " + e);
+                }
                break;
             case 'P':
                 this.showPrices();
@@ -58,7 +65,18 @@ public class ShoppingControlView extends View {
         return false; 
     }
 
-    private void changeLocation() {
+    private void changeLocation() throws ShoppingControlException {
+        String locationMenu = "Select one of the following locations:\n" +
+                              "--------------------------------------\n";
+        for (int i = 0; i< shopping.getLocationName().length; i++ ) {
+            locationMenu += (i + 1) + " - " + shopping.getLocationName(i);
+        }
+        ShoppingControlView shoppingView = new
+                ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
+            boolean exitShoppingMenu = false;
+            while(!exitShoppingMenu) {
+                exitShoppingMenu = shoppingView.display();
+            
         this.console.println("changeLocation() in Shopping Control View called.");
     }
 
