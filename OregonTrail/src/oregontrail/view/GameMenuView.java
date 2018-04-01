@@ -82,19 +82,19 @@ public class GameMenuView extends View {
     }
 
     private void displayShopping() {
-        ShoppingControl shopping = new ShoppingControl();
-        try {
-            ShoppingControlView shoppingView = new
-                ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
-            boolean exitShoppingMenu = false;
-            while(!exitShoppingMenu) {
-                exitShoppingMenu = shoppingView.display();
+        boolean exitShopping = false;
+        boolean exitShoppingMenu = false;
+        while(!exitShoppingMenu) {
+            ShoppingControl shopping = new ShoppingControl();
+            try {
+                ShoppingControlView shoppingView = new
+                    ShoppingControlView(shopping.getLocationName(OregonTrail.getLocationNum()));
+                    exitShoppingMenu = shoppingView.display();
+            } catch (ShoppingControlException e) {
+                ErrorView.display(this.getClass().getName(),
+                    "Shopping Control Error: " + e);
             }
-        } catch (ShoppingControlException e) {
-            ErrorView.display(this.getClass().getName(),
-                "Shopping Control Error: " + e);
         }
-            
 
         //this.console.println("*** displayShopping() called ***");
     }
