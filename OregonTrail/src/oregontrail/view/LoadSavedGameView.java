@@ -24,15 +24,7 @@ public class LoadSavedGameView extends View {
     @Override
     public boolean doAction(String value) {
         Game game = OregonTrail.getCurrentGame();
-        try {
-            GameControl.getGame(game, value);
-        } catch (GameControlException e) {
-            this.console.println(e.getMessage());
-            return false;
-        } catch (IOException e) {
-            this.console.println("I/O Error: " + e.getMessage());
-            return false;
-        }
+        GameControl.getGame(game, value);
         this.console.println("Game successfully saved");
         
         
