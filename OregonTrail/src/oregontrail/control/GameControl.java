@@ -116,6 +116,10 @@ public class GameControl {
         
         return game;
     }
+
+    public static void getGame(Game game, String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
