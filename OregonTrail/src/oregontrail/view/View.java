@@ -66,6 +66,30 @@ public abstract class View implements ViewInterface {
         return selection; // return the name
     }
 
+    public String getInputNoDisplay() {
+        boolean valid = false;
+        String selection = null;
+        
+        try {
+            // while a valid name has not been retrieved
+            while (!valid) {
+            
+                // get the value entered from the keyboard
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+                if (selection.length() < 1) {
+                    this.console.println("You must enter a non-blank value.");
+                    continue; 
+                }
+                break;
+            }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),
+                          "Error reading input: " + e.getMessage());
+        }
+        return selection; // return the name
+    }
+    
     // converts the input string to just the capital first character
     public char getInputChar(String inputs) {
         char inputChar;
