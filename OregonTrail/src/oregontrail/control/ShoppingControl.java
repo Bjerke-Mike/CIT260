@@ -93,7 +93,7 @@ public class ShoppingControl {
         return itemPrice;
     }
 
-    public int getMaxCapacity( int itemNum) {
+    public int getMaxCapacity(int itemNum) {
         return maxCapacity[itemNum];
     }
     
