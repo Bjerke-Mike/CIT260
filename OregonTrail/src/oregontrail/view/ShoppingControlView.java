@@ -107,7 +107,7 @@ public class ShoppingControlView extends View {
         int locationNum = OregonTrail.getLocationNum();
         String locationName = shopping.getLocationName(locationNum);
         String menu = "\nShopping at: " + locationName + 
-                      "\nSelect one of the following:\n" +
+                      "\nSelect one of the following items:\n" +
                         "--------------------------------------\n";
         
         for (int i = 0; i < shopping.getItemNames().length; i++){
@@ -128,8 +128,12 @@ public class ShoppingControlView extends View {
             if ((supplies.getMoney() %10) == 0)
                 menu += "0";
             menu += "\n";
-        
-        this.console.println(menu);
+            ShopAtFortView fortShopping = new ShopAtFortView(menu);
+            boolean exitShopping = false;
+            while(!exitShopping) {
+                exitShopping = fortShopping.display();
+            }
+
         //this.console.println("shopping() in Shopping Control View called.");
     }
 
