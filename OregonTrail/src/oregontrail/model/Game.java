@@ -61,6 +61,14 @@ public class Game implements Serializable {
         this.playerData = playerData;
     }
 
+    public Supplies getSupplies() {
+        return supplies;
+    }
+
+    public void setSupplies(Supplies supplies) {
+        this.supplies = supplies;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
