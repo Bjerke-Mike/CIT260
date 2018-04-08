@@ -11,6 +11,7 @@ import oregontrail.OregonTrail;
 import oregontrail.control.ShoppingControl;
 import oregontrail.exceptions.ShoppingControlException;
 import oregontrail.model.Game;
+import oregontrail.model.Location;
 
 /**
  *
@@ -68,10 +69,44 @@ public class GameMenuView extends View {
     }
 
     private void displayMap(){
+    /*
+    game = get the currentGame from the main class -done
+    locations = get the 2-D locations array from the map
+    Print the title-done
+    Print the column numbers for each column-done
+    for every row in map-done
+    Print a row divider-done
+    Print the row number on a new line for every column in the row-done
+    Print a column divider-done
+        
+    The rest isn't done... don't understand how to complete:   
+    location = locations[row][column]
+    if location has been visited
+    Get the mapSymbol for the scene in this location
+    Print the mapSymbol
+    else
+    Print " ?? "
+    endif
+    endFor
+    Print the ending column divider
+    endFor
+    Print the ending row divider
+    */
         Game game = new Game();
         game = OregonTrail.getCurrentGame();
+        this.console.println("Oregon Trail Map");
+        Location location = new Location();
+  
+        this.console.println("Oregon Trail Map");
+        this.console.println("1  2  3  4  5");
+        this.console.println("__________________________________________");
+        this.console.println("1");
+        this.console.println("2");
+        this.console.println("3");
+        this.console.println("4");
+        this.console.println("5");
+        this.console.println("__________________________________________");
         
-        this.console.println("*** Trail Map Information ***");
     } 
     private void displayMove(){
         this.console.println("*** displayMove() called ***");
