@@ -19,7 +19,7 @@ public class Supplies implements Serializable {
     private int miscSupplies;
 
     public Supplies() {
-        money = 700;
+        money = 70000;
         food = 0;
         ammo = 0;
         clothing = 0;
