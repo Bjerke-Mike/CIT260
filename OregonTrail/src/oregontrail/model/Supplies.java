@@ -6,6 +6,7 @@
 package oregontrail.model;
 
 import java.io.Serializable;
+import oregontrail.exceptions.ShoppingControlException;
 
 /**
  *
@@ -26,6 +27,45 @@ public class Supplies implements Serializable {
         miscSupplies = 0;
     }
 
+    public int getSupplies(int value) throws ShoppingControlException {
+        switch(value) {
+            case 0:
+                return money;
+            case 1:
+                return food;
+            case 2:
+                return ammo;
+            case 3:
+                return clothing;
+            case 4:
+                return miscSupplies;
+            default:
+                throw new ShoppingControlException("Supplies number is invalid in getSupplies()");
+        }
+    }
+
+    public void setSupplies(int itemNum, int value) throws ShoppingControlException {
+        switch(itemNum) {
+            case 0:
+                this.setMoney(value);
+                return;
+            case 1:
+                this.setFood(value);
+                return;
+            case 2:
+                this.setAmmo(value);
+                return;
+            case 3:
+                this.setClothing(value);
+                return;
+            case 4:
+                this.setMiscSupplies(value);
+                return;
+            default:
+                throw new ShoppingControlException("Supplies number is invalid in setSupplies()");
+        }
+    }
+    
     public int getMoney() {
         return money;
     }
