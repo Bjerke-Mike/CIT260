@@ -42,16 +42,23 @@ public class ShoppingControlView extends View {
         inputChar = getInputChar(value);
         
         switch (inputChar) {
-            /*case 'C':
+            case 'C':
                 try {
                     this.changeLocation();
                 } catch (ShoppingControlException e) {
                     ErrorView.display(this.getClass().getName(),
                     "Shopping Control Error: " + e);
                 }
-               break;*/
+               break;
             case 'P':
+        {
+            try {
                 this.shopping();
+            } catch (ShoppingControlException e) {
+                    ErrorView.display(this.getClass().getName(),
+                    "Shopping Control Error: " + e);
+            }
+        }
                 break;
             case 'R':
                 this.savePrices();
@@ -90,28 +97,38 @@ public class ShoppingControlView extends View {
         }
     }
 
-    private void shopping() {
+    private void shopping()  throws ShoppingControlException {
         if (!OregonTrail.isAtFort()){
             
         }
         ShoppingControl shopping = new ShoppingControl();
-        String menu = "\n";
         Supplies supplies;
         supplies = OregonTrail.getCurrentGame().getSupplies();
         int locationNum = OregonTrail.getLocationNum();
+        String locationName = shopping.getLocationName(locationNum);
+        String menu = "\nShopping at: " + locationName + 
+                      "\nSelect one of the following:\n" +
+                        "--------------------------------------\n";
+        
         for (int i = 0; i < shopping.getItemNames().length; i++){
-            String itemName =  shopping.getItemNames(locationNum);
-            int nameLength = itemName.length();
-            if (itemName.length() < 10) {
-                for (int k = 0; k <(10 - nameLength); k++);
-                    itemName += " ";
-            }
-            menu += (i + 1) + " - " + itemName + 
-                    " $" + shopping.getPrices(i, locationNum) + "\n";
+            String itemName =  shopping.getItemNames(i);
+            //int nameLength = itemName.length();
+            int price = shopping.getPrices(locationNum, i);
+            menu += (i + 1) + " - " + itemName;
+            for (int k = 10; k > itemName.length(); k--)
+                menu += " ";
+
+            menu += " $" + price / 100 + "." + price % 100;
+            if (price % 100 == 0)
+                menu += "0";
+            menu += "\n";
         }
-        menu += "E          - Exit Shopping\n\t\tYou have $"
-                + ((double) supplies.getMoney() / 100.00)
-                + "\n";
+        menu += "E - Exit Shopping\n\tYou have $"
+                + ((double) supplies.getMoney() / 100.00);
+            if ((supplies.getMoney() %10) == 0)
+                menu += "0";
+            menu += "\n";
+        
         this.console.println(menu);
         //this.console.println("shopping() in Shopping Control View called.");
     }
