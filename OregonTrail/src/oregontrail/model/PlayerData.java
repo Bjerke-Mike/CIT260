@@ -21,7 +21,7 @@ public class PlayerData implements Serializable {
     public PlayerData() {
         oxenQuality = 100;
         health = 100;
-        rations = 3;
+        rations = 5;
     }
     
     public int getOxenQuality() {
