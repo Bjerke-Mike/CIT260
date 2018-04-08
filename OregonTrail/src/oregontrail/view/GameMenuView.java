@@ -136,9 +136,21 @@ public class GameMenuView extends View {
   
     private void goHunting() {
         HuntingView startHunting = new HuntingView();
+        ShoppingControl shopping = new ShoppingControl();
         int foodReceived;
-        foodReceived = startHunting.displayHuntingView();
-        this.console.println("You received " + foodReceived + " food.");
+        if (OregonTrail.getSupplies().getAmmo() > 0) {
+            foodReceived = startHunting.displayHuntingView();
+            int currentFood = OregonTrail.getSupplies().getFood();
+            int maxFood = shopping.getMaxCapacity(1);
+            if ((currentFood + foodReceived) > maxFood) {
+                OregonTrail.getSupplies().setFood(maxFood);
+            } else{
+                OregonTrail.getSupplies().modifyFood(foodReceived);
+            }
+            OregonTrail.getSupplies().modifyAmmo(-1);
+        } else{
+            this.console.println("You can't hunt without any ammo!");
+        }
     }
     private void displayHelp(){
         this.console.println("*** displayHelp() called ***");
