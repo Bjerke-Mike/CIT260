@@ -22,11 +22,11 @@ public class ShoppingControl {
     private String[] locationName = { "Independence", "Fort Kearney", "Laramie",
              "Fort Bridger", "Fort Hall", "Fort Boise", "Fort Walla Walla"};
     private String[] itemNames = { "Food", "Ammo", "Clothing", "Misc" };
-    private double[][] prices = {
-        { 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.80},  // Food prices
-        { 0.75, 0.80, 0.85, 0.90, 1.00, 1.20, 1.10},  // Ammo Prices
-        { 1.20, 1.30, 1.50, 1.40, 1.50, 1.30, 1.40},  // Clothing Prices
-        { 1.00, 1.20, 1.40, 1.50, 1.60, 1.70, 1.50}   // Misc Supplies prices
+    private int[][] prices = {  // Prices is in cents
+        { 40, 50, 60, 70, 80, 90, 80},  // Food prices
+        { 75, 80, 85, 90, 100, 120, 110},  // Ammo Prices
+        { 120, 130, 150, 140, 150, 130, 140},  // Clothing Prices
+        { 100, 120, 140, 150, 160, 170, 150}   // Misc Supplies prices
     };
 
     public String[] getLocationName() {
@@ -56,14 +56,14 @@ public class ShoppingControl {
         this.itemNames = itemNames;
     }
 
-    public double[][] getPrices() {
+    public int[][] getPrices() {
         return prices;
     }
-    public double getPrices(int itemNum, int locationNum) {
+    public int getPrices(int itemNum, int locationNum) {
         return prices[locationNum][itemNum];
     }
     
-    public void setPrices(double[][] prices) {
+    public void setPrices(int[][] prices) {
         this.prices = prices;
     }
     
