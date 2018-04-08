@@ -48,8 +48,8 @@ public class ShoppingControl {
         return itemNames;
     }
 
-    public String getItemNames(int locationNum) {
-        return itemNames[locationNum];
+    public String getItemNames(int itemNumber) {
+        return itemNames[itemNumber];
     }
 
     public void setItemNames(String[] itemNames) {
