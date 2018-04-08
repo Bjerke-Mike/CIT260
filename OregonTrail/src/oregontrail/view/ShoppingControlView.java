@@ -25,7 +25,7 @@ public class ShoppingControlView extends View {
               + "\n\t-----------------------------------------"
               + "\n\t  Shopping at " + location
               + "\n\t-----------------------------------------"
-              //+ "\n\t  C - Change location"
+              + "\n\t  C - Change location"
               + "\n\t  P - Purchase Supplies"
               + "\n\t  R - Report the prices to a file"
               + "\n\t  H - Get help on this menu"
