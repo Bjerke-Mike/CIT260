@@ -19,6 +19,7 @@ public class Game implements Serializable {
     private int mileage;
     private Map map;
     private PlayerData playerData;
+    private Supplies supplies;
 
     public int getGameDate() {
         return gameDate;
@@ -29,6 +30,7 @@ public class Game implements Serializable {
         mileage = 0;
         map = new Map();
         playerData = new PlayerData();
+        supplies = new Supplies();
     }
 
     public void setGameDate(int gameDate) {
