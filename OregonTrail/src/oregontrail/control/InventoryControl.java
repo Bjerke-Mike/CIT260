@@ -13,6 +13,7 @@ public class InventoryControl {
    
     public double addToIventory(String inventoryItem, int amount) {
        
+        inventoryItem = inventoryItem.toLowerCase();
         if (amount > 300) {
             return 0; }
         if (amount < 1) {
