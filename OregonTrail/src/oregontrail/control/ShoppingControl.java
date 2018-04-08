@@ -29,7 +29,7 @@ public class ShoppingControl {
         { 100, 120, 140, 150, 160, 170, 150}   // Misc Supplies prices
     };
     // Maximum for Food, Ammo, Clothing, and Misc.
-    private int[] maxCapacity = {1000, 200, 10, 100};
+    private int[] maxCapacity = {2000, 200, 10, 100};
     public String[] getLocationName() {
         return locationName;
     }
