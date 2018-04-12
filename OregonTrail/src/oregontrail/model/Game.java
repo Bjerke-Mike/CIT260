@@ -17,6 +17,8 @@ public class Game implements Serializable {
     // class variables
     private int gameDate;
     private int mileage;
+    private boolean atFort;
+    private static int locationNum;
     private Map map;
     private PlayerData playerData;
     private Supplies supplies;
@@ -28,6 +30,8 @@ public class Game implements Serializable {
     public Game() {
         gameDate = 0;
         mileage = 0;
+        atFort = true;
+        locationNum = 0;
         map = new Map();
         playerData = new PlayerData();
         supplies = new Supplies();
@@ -43,6 +47,22 @@ public class Game implements Serializable {
 
     public void setMileage(int mileage) {
         this.mileage = mileage;
+    }
+
+    public boolean isAtFort() {
+        return atFort;
+    }
+
+    public void setAtFort(boolean atFort) {
+        this.atFort = atFort;
+    }
+
+    public int getLocationNum() {
+        return locationNum;
+    }
+
+    public void setLocationNum(int locationNum) {
+        this.locationNum = locationNum;
     }
 
     public Map getMap() {
