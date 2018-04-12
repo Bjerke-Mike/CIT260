@@ -20,20 +20,20 @@ public class BuyOxenView extends View{
 
     @Override
     public boolean doAction(String value) {
-        int oxenQuality;
+        int oxen;
         try {
-            oxenQuality = Integer.parseInt(value);
+            oxen = Integer.parseInt(value);
         } catch(NumberFormatException e) {
             console.println("You must enter a number from 200 to 300.");
             return false;
         }
-        if (oxenQuality < 200 || oxenQuality > 300){
+        if (oxen < 200 || oxen > 300){
             console.println("You must enter a number from 200 to 300.");
             return false;
         }
-        oxenQuality *= 5;
-        OregonTrail.getCurrentGame().getPlayerData().setOxenQuality(oxenQuality);
-        OregonTrail.getCurrentGame().getSupplies().modifyMoney(-(oxenQuality * 20));
+        oxen *= 50;
+        OregonTrail.getCurrentGame().getPlayerData().setOxenQuality(oxen);
+        OregonTrail.getCurrentGame().getSupplies().modifyMoney(-(oxen * 2));
         return true;
     }
 }
