@@ -34,8 +34,6 @@ public class OregonTrail {
     private static Player player = null;
     private static Supplies items = null;
     private static Map map = null;
-    private static int locationNum = 0;
-    private static boolean atFort = true;
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -107,6 +105,7 @@ public class OregonTrail {
     public static void setPlayer(Player player) {
         OregonTrail.player = new Player();
         OregonTrail.player = player;
+        
     }
     
     public static Supplies getSupplies() {
@@ -126,19 +125,19 @@ public class OregonTrail {
     }
 
     public static int getLocationNum() {
-        return locationNum;
+        return currentGame.getLocationNum();
     }
 
     public static void setLocationNum(int locationNumber) {
-        OregonTrail.locationNum = locationNumber;
+        currentGame.setLocationNum(locationNumber);
     }
 
     public static boolean isAtFort() {
-        return atFort;
+        return currentGame.isAtFort();
     }
 
     public static void setAtFort(boolean atFort) {
-        OregonTrail.atFort = atFort;
+        currentGame.setAtFort(atFort);
     }
     
     public static Map getMap() {
