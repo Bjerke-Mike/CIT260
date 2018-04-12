@@ -40,7 +40,7 @@ public class MapControl {
     }
     
     private static Map createLocations(int numOfRows, int numOfColumns){
-        System.out.println("The createLocations() has been called.");
+        //System.out.println("The createLocations() has been called.");
         Map map = new Map();
         Map.setNumOfRows(numOfRows);
         Map.setNumOfColumns(numOfColumns);
