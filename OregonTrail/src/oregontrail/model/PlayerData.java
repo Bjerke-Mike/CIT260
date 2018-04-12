@@ -14,9 +14,9 @@ import java.util.Objects;
  */
 public class PlayerData implements Serializable {
     
-    private int oxenQuality;
-    private int health;
-    private int rations;
+    private static int oxenQuality;
+    private static int health;
+    private static int rations;
 
     public PlayerData() {
         oxenQuality = 100;
