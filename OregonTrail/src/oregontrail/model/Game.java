@@ -15,13 +15,13 @@ import java.util.Objects;
 public class Game implements Serializable { 
     
     // class variables
-    private int gameDate;
-    private int mileage;
-    private boolean atFort;
+    private static int gameDate;
+    private static int mileage;
+    private static boolean atFort;
     private static int locationNum;
     private Map map;
-    private PlayerData playerData;
-    private Supplies supplies;
+    private static PlayerData playerData;
+    private static Supplies supplies;
 
     public int getGameDate() {
         return gameDate;
