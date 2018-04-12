@@ -32,6 +32,14 @@ public class StartProgramView extends View {
             game = new Game();
             OregonTrail.setCurrentGame(game);
         }
+        if (OregonTrail.getCurrentGame().getSupplies().getMoney() == 70000 &&
+                OregonTrail.getCurrentGame().getMileage() == 0){
+            boolean valid = false;
+            BuyOxenView oxen = new BuyOxenView();
+            while (!valid) {
+                valid = oxen.display();
+            }
+        }
         boolean endOfView = false;
         if (inputs == null || inputs.length() < 1) {
             ErrorView.display(this.getClass().getName(),
