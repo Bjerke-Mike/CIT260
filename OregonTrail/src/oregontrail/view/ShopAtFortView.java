@@ -84,7 +84,7 @@ public class ShopAtFortView extends View {
         int maxPurchase = supplies.getMoney() / shopping.getPrices(locationNum, value - 1);
         if (maxPurchase > (maxItem - currentNum))
             maxPurchase = maxItem - currentNum;
-        shoppingMenu += "\nYou can purchase a maximum of " + maxPurchase + "."
+        shoppingMenu += "\nYou can purchase a maximum of " + maxPurchase + " more."
                 + "\nEnter the number to buy or a zero for none.";
         console.println(shoppingMenu);
         boolean valid = false;
