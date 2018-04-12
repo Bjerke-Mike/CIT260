@@ -72,6 +72,11 @@ public class MainMenuView extends View {
         GameControl.createNewGame(OregonTrail.getPlayer());   
         GameMenuView gameMenuView = new GameMenuView();
         boolean valid = false;
+        BuyOxenView oxen = new BuyOxenView();
+        while (!valid) {
+            valid = oxen.display();
+        }
+        valid = false;
         while (!valid){
             valid = gameMenuView.display();
         }
