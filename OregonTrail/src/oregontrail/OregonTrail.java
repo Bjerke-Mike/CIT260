@@ -30,7 +30,7 @@ public class OregonTrail {
     /**
      * @param args the command line arguments
      */
-    private static Game currentGame = new Game();
+    private static Game currentGame = null;
     private static Player player = null;
     private static Supplies items = null;
     private static Map map = null;
