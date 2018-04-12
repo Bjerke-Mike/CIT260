@@ -31,9 +31,9 @@ public class BuyOxenView extends View{
             console.println("You must enter a number from 200 to 300.");
             return false;
         }
-        OregonTrail.getCurrentGame().getSupplies().modifyMoney(-(oxenQuality * 100));
         oxenQuality *= 5;
         OregonTrail.getCurrentGame().getPlayerData().setOxenQuality(oxenQuality);
+        OregonTrail.getCurrentGame().getSupplies().modifyMoney(-(oxenQuality * 20));
         return true;
     }
 }
